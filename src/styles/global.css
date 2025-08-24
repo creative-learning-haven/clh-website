@@ -1,0 +1,62 @@
+@font-face {
+	font-family: 'Avenir Custom';
+	src: url('/fonts/avenir-light.woff2') format('woff2'),
+		 url('/fonts/avenir-light.woff') format('woff'),
+		 url('/fonts/avenir-light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Avenir Custom';
+	src: url('/fonts/avenir-heavy.woff2') format('woff2'),
+		 url('/fonts/avenir-heavy.woff') format('woff'),
+		 url('/fonts/avenir-heavy.ttf') format('truetype');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Lulo Clean Custom';
+	src: url('/fonts/lulo-clean-one-bold.woff2') format('woff2'),
+		 url('/fonts/lulo-clean-one-bold.woff') format('woff'),
+		 url('/fonts/lulo-clean-one-bold.ttf') format('truetype'),
+		 url('/fonts/lulo-clean-one-bold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	--color-brand: #d79b4f;
+	--color-accent: #8fe0c4;
+	--color-ink: #162126;
+	--section-light: #e9ecec;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+	font-family: 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.1em;
+}
+
+/* Slightly tighter tracking for large headings */
+/* h1, h2 { letter-spacing: -1em; } */
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+

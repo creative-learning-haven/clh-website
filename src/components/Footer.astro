@@ -1,0 +1,35 @@
+---
+---
+
+<footer class="site-footer">
+	<div class="container">
+		<p>© {new Date().getFullYear()} Creative Learning Haven</p>
+		<p class="note">Footer design TBD</p>
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		margin-top: 48px;
+		background: #0f2d35;
+		color: #d6efe7;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 28px 16px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.note { opacity: 0.8; }
+
+	@media (max-width: 720px) {
+		.container { flex-direction: column; align-items: start; }
+	}
+</style>
+
+
