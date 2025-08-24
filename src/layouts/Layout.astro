@@ -15,7 +15,7 @@ import Footer from "../components/Footer.astro";
 		<title>Creative Learning Haven</title>
 	</head>
 	<body>
-		<NavBar />
+		<NavBar currentPath={Astro.url.pathname} />
 		<main id="page">
 			<slot />
 		</main>

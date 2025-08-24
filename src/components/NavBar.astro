@@ -1,4 +1,5 @@
 ---
+const { currentPath = "/" } = Astro.props as { currentPath?: string };
 ---
 
 <header class="site-header">
@@ -6,16 +7,16 @@
 		<div class="container">
 			<a class="brand" href="/">Creative Learning Haven</a>
 			<nav class="main-nav" aria-label="Primary">
-				<a href="/">Home</a>
-				<a href="/who-we-are">Who We Are</a>
-				<a href="/support-us">Support Us</a>
-				<a href="/events">Events</a>
-				<a href="/blog">Blog</a>
-				<a href="/contact">Contact</a>
+				<a href="/" class={currentPath === "/" ? "active" : ""}>Home</a>
+				<a href="/who-we-are" class={currentPath.startsWith("/who-we-are") ? "active" : ""}>Who We Are</a>
+				<a href="/support-us" class={currentPath.startsWith("/support-us") ? "active" : ""}>Support Us</a>
+				<a href="/events" class={currentPath.startsWith("/events") ? "active" : ""}>Events</a>
+				<a href="/blog" class={currentPath.startsWith("/blog") ? "active" : ""}>Blog</a>
+				<a href="/contact" class={currentPath.startsWith("/contact") ? "active" : ""}>Contact</a>
 			</nav>
 		</div>
 	</div>
-	<a class="donate-col" href="/support-us">DONATE</a>
+	<a class="donate-col recolor-on-hover" href="/support-us">DONATE</a>
 </header>
 
 <style>
@@ -54,8 +55,11 @@
 		font-size: 0.8em;
 		text-decoration: none;
 		color: white;
+		transition: color .15s ease;
 		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 	}
+
+	.brand:hover { color: #D55342; }
 
 	.main-nav {
 		display: flex;
@@ -68,18 +72,15 @@
 	}
 
 	.main-nav a {
-		color: white;
+		color: var(--color-white);
 		text-decoration: none;
 		font-weight: 500;
 		opacity: 0.95;
-		transition: opacity .15s ease;
+		transition: color .15s ease, opacity .15s ease;
 	}
 
-	.main-nav a:hover {
-		opacity: 1;
-		text-decoration: underline;
-		text-underline-offset: 4px;
-	}
+	.main-nav a:hover { opacity: 1; color: #D55342; }
+	.main-nav a.active { color: #D55342; opacity: 1; }
 
 	.donate-col {
 		display: flex;
@@ -96,6 +97,8 @@
 		box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
 		height: 100%;
 		min-width: 140px;
+		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		font-size: 0.8em;
 	}
 
 	@media (max-width: 720px) {

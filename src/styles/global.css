@@ -33,7 +33,30 @@
 	--color-brand: #d79b4f;
 	--color-accent: #8fe0c4;
 	--color-ink: #162126;
-	--section-light: #e9ecec;
+	--section-light: #e8e8e8;
+	--color-hover: #D55342;
+
+	--color-white: #ffffff;
+	--white-strong: rgba(255,255,255,0.98);
+	--overlay-dark: rgba(9,38,49,0.45);
+
+	--color-ink-strong: #0b2d1f;
+	--color-link-strong: #0a3730;
+
+	--color-pledge-red: #cf5b4f;
+	--color-pledge-red-text: #fff4f2;
+	--color-pledge-cta-text: #c0453b;
+
+	--color-socials-green: #43b29e;
+	--color-teal-ink: #083c2f;
+
+	--color-subscribe-dark: #17323b;
+	--color-subscribe-input-border: #2d4a53;
+	--color-subscribe-input-bg: #0f272f;
+	--color-subscribe-input-text: #e6fffb;
+	--color-subscribe-foreground: #d6efe7;
+
+	--color-donate-hover: #ffe27a;
 }
 
 * { box-sizing: border-box; }
@@ -58,5 +81,14 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* Utility: brand hover color */
+.recolor-on-hover { transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.recolor-on-hover:hover,
+.recolor-on-hover:focus-visible {
+	background: var(--color-hover) !important;
+	color: #ffffff !important;
+	border-color: var(--color-hover) !important;
+}
 
 
