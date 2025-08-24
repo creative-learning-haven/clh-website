@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import horissImg from '../assets/Horiss logo.jpg';
+---
+
+<Layout>
+	<section class="page">
+		<h1>About</h1>
+		<p>Creative Learning Haven (CLH) runs 2 community libraries in Uganda’s Imvepi and Rhino refugee camps since January 2025.</p>
+		<p>These additional learning spaces are the first of their kind in the camps.</p>
+		<p style="margin-top: 40px;">Our project is run by Lulu Tian and 2 refugee-led organizations:</p>
+
+		<div class="orgs">
+			<div class="org">
+				<img src={horissImg.src} alt="Horiss" />
+			</div>
+			<div class="org tbd">TBD</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.page {
+		max-width: 500px;
+		margin: 32px auto;
+		padding: 0 16px;
+	}
+
+	h1 { color: var(--color-hover); margin-bottom: 12px; margin-top: 100px; text-align: center; }
+
+	p { margin: 8px auto; line-height: 1.6; text-align: justify; }
+
+	.orgs {
+		margin-top: 40px;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 12px;
+	}
+
+	.org {
+		place-items: center;
+	}
+
+	.org img { width: 90%; height: 90%; object-fit: contain; }
+
+	.org.tbd { color: var(--color-ink); font-weight: 800; letter-spacing: .06em; }
+</style>
+
+
