@@ -1,16 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import SecondaryPage from '../layouts/SecondaryPage.astro';
 ---
-
-<Layout>
-	<section class="page">
-		<h1>Blog</h1>
-		<p>Posts will live here.</p>
-	</section>
-</Layout>
+<SecondaryPage title="Blog">
+	<p class="blog-desc">Stay tuned for updates on our project!</p>
+</SecondaryPage>
 
 <style>
-	.page { max-width: 900px; margin: 32px auto; padding: 0 16px; }
+	.blog-desc { text-align: center; max-width: 900px; }
 </style>
 
 
