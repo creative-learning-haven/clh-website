@@ -33,15 +33,62 @@ import heroImg from '../assets/P1090543.jpg';
 		<div class="panel subscribe">
 			<h2>Subscribe</h2>
 			<p>Subscribe to our Newsletter</p>
-			<form class="subscribe-form" onsubmit="return false">
-				<input type="email" placeholder="Email address" />
+			<form class="subscribe-form" method="POST" data-netlify="true">
+				<input type="hidden" name="form-name" value="newsletter-subscribe" />
+				<input type="email" name="email" placeholder="Email address" required />
 				<button type="submit">Subscribe</button>
 			</form>
+			<div class="form-message" id="form-message"></div>
 		</div>
 	</section>
 
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const form = document.querySelector('.subscribe-form') as HTMLFormElement;
+			const messageDiv = document.getElementById('form-message');
+			
+			if (!form || !messageDiv) return;
+			
+			form.addEventListener('submit', async function(e) {
+				e.preventDefault();
+				
+				const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+				const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+				
+				if (!emailInput || !submitButton) return;
+				
+				// Show loading state
+				submitButton.textContent = 'Subscribing...';
+				submitButton.disabled = true;
+				messageDiv.textContent = '';
+				
+				try {
+					// Submit form data
+					const formData = new FormData(form);
+					const response = await fetch('/', {
+						method: 'POST',
+						body: formData
+					});
+					
+					if (response.ok) {
+						messageDiv.textContent = 'Thank you for subscribing!';
+						messageDiv.className = 'form-message success';
+						form.reset();
+					} else {
+						throw new Error('Submission failed');
+					}
+				} catch (error) {
+					messageDiv.textContent = 'Something went wrong. Please try again.';
+					messageDiv.className = 'form-message error';
+				} finally {
+					submitButton.textContent = 'Subscribe';
+					submitButton.disabled = false;
+				}
+			});
+		});
+	</script>
+
 <h2 class="activities-title">OUR ACTIVITIES</h2>
-<span style="text-align: center; display: block; margin-top: 12px; color: var(--color-subscribe-dark);">Coming soon!</span>
 </Layout>
 
 <style>
@@ -175,6 +222,35 @@ import heroImg from '../assets/P1090543.jpg';
 		border-radius: 8px;
 		padding: 10px 14px;
 		font-weight: 800;
+		transition: background-color 0.2s ease;
+	}
+
+	.subscribe-form button:hover {
+		background: var(--color-donate-hover);
+	}
+
+	.subscribe-form button:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+	}
+
+	.form-message {
+		margin-top: 12px;
+		padding: 8px 12px;
+		border-radius: 6px;
+		font-size: 0.9em;
+		text-align: center;
+	}
+
+	.form-message.success {
+		background: rgba(139, 230, 196, 0.2);
+		border: 1px solid rgba(139, 230, 196, 0.4);
+	}
+
+	.form-message.error {
+		background: rgba(207, 91, 79, 0.2);
+		color: #fff4f2;
+		border: 1px solid rgba(207, 91, 79, 0.4);
 	}
 
 	.link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--color-link-strong); }
