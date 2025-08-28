@@ -4,6 +4,17 @@ import heroImg from '../assets/P1090543.jpg';
 ---
 
 <Layout>
+	{/* Toast notification for successful subscription */}
+	<div id="toast" class="toast toast-success" style="display: none;">
+		<div class="toast-content">
+			<span class="toast-icon">✓</span>
+			<div class="toast-message">
+				<strong>Thank you for subscribing!</strong>
+				<p>We've added <span class="email-highlight" id="subscriber-email"></span> to our newsletter list.</p>
+			</div>
+		</div>
+	</div>
+
 	<section class="hero" style={`--hero-image: url(${heroImg.src})`}>
 		<div class="hero-inner">
 			<h1>
@@ -37,14 +48,39 @@ import heroImg from '../assets/P1090543.jpg';
 				<input type="email" name="email" placeholder="Email address" required />
 				<button type="submit">Subscribe</button>
 			</form>
-			{/* Show success message if user just subscribed */}
-			{new URL(Astro.request.url).searchParams.get('subscribed') === 'true' && (
-				<p class="success-message">Thank you for subscribing! We'll keep you updated.</p>
-			)}
 		</div>
 	</section>
 
-<h2 class="activities-title">OUR ACTIVITIES</h2>
+	<h2 class="activities-title">OUR ACTIVITIES</h2>
+
+	<script>
+		// Check URL parameters and show toast if user just subscribed
+		document.addEventListener('DOMContentLoaded', function() {
+			const url = new URL(window.location.href);
+			const subscribed = url.searchParams.get('subscribed');
+			const email = url.searchParams.get('email');
+			
+			const toast = document.getElementById('toast');
+			const emailSpan = document.getElementById('subscriber-email');
+			
+			if (subscribed === 'true' && email && toast && emailSpan) {
+				// Set the email in the toast
+				emailSpan.textContent = email;
+				
+				// Show the toast
+				toast.style.display = 'block';
+				
+				// Auto-hide after 5 seconds
+				setTimeout(() => {
+					toast.classList.add('hiding');
+					setTimeout(() => {
+						toast.style.display = 'none';
+						toast.classList.remove('hiding');
+					}, 300); // Wait for animation to complete
+				}, 5000); // Hide after 5 seconds
+			}
+		});
+	</script>
 </Layout>
 
 <style>
@@ -180,14 +216,6 @@ import heroImg from '../assets/P1090543.jpg';
 		font-weight: 800;
 	}
 
-	.success-message {
-		margin-top: 12px;
-		color: var(--color-accent);
-		font-weight: 600;
-		font-size: 0.9em;
-		text-align: center;
-	}
-
 	.link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--color-link-strong); }
 
 	@media (max-width: 900px) {
@@ -203,5 +231,91 @@ import heroImg from '../assets/P1090543.jpg';
 		text-transform: uppercase;
 		letter-spacing: .18em;
 		font-size: clamp(18px, 3.2vw, 28px);
+	}
+
+	/* Toast notification styles */
+	.toast {
+		position: fixed;
+		top: 80px; /* Below the navbar */
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 1000;
+		max-width: 90vw;
+		width: 400px;
+		border-radius: 12px;
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+		animation: toastSlideIn 0.3s ease-out;
+	}
+
+	.toast-success {
+		background: linear-gradient(135deg, #4ade80, #22c55e);
+		color: white;
+		border: 1px solid #16a34a;
+	}
+
+	.toast-content {
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+		padding: 16px 20px;
+	}
+
+	.toast-icon {
+		font-size: 20px;
+		font-weight: bold;
+		color: white;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
+
+	.toast-message {
+		flex: 1;
+	}
+
+	.toast-message strong {
+		display: block;
+		font-size: 16px;
+		margin-bottom: 4px;
+	}
+
+	.toast-message p {
+		margin: 0;
+		font-size: 14px;
+		opacity: 0.95;
+		line-height: 1.4;
+	}
+
+	.email-highlight {
+		background: rgba(255, 255, 255, 0.2);
+		padding: 2px 6px;
+		border-radius: 4px;
+		font-family: monospace;
+		font-weight: 600;
+	}
+
+	@keyframes toastSlideIn {
+		from {
+			opacity: 0;
+			transform: translateX(-50%) translateY(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
+
+	@keyframes toastSlideOut {
+		from {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(-50%) translateY(-20px);
+		}
+	}
+
+	.toast.hiding {
+		animation: toastSlideOut 0.3s ease-in forwards;
 	}
 </style>

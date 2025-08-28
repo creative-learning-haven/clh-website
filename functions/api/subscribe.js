@@ -36,7 +36,7 @@ export async function onRequestPost(context) {
     return new Response(null, {
       status: 302,
       headers: {
-        'Location': '/?subscribed=true',
+        'Location': `/?subscribed=true&email=${encodeURIComponent(email)}`,
       },
     });
 
