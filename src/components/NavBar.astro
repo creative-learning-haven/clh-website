@@ -1,18 +1,22 @@
 ---
+import { company, navigation } from '../data/site.js';
+
 const { currentPath = "/" } = Astro.props as { currentPath?: string };
 ---
 
 <header class="site-header">
 	<div class="left">
 		<div class="container">
-			<a class="brand" href="/">Creative Learning Haven</a>
+			<a class="brand" href="/">{company.name}</a>
 			<nav class="main-nav" aria-label="Primary">
-				<a href="/" class={currentPath === "/" ? "active" : ""}>Home</a>
-				<a href="/about" class={currentPath.startsWith("/about") ? "active" : ""}>About</a>
-				<a href="/support-us" class={currentPath.startsWith("/support-us") ? "active" : ""}>Support Us</a>
-				<a href="/events" class={currentPath.startsWith("/events") ? "active" : ""}>Events</a>
-				<a href="/blog" class={currentPath.startsWith("/blog") ? "active" : ""}>Blog</a>
-				<a href="/contact" class={currentPath.startsWith("/contact") ? "active" : ""}>Contact</a>
+				{navigation.main.map(item => (
+					<a 
+						href={item.href} 
+						class={currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) ? "active" : ""}
+					>
+						{item.title}
+					</a>
+				))}
 			</nav>
 		</div>
 	</div>

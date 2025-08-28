@@ -1,19 +1,20 @@
 ---
-import fbIcon from '../assets/5305153_fb_facebook_facebook logo_icon.svg';
-import twIcon from '../assets/5305170_bird_social media_social network_tweet_twitter_icon.svg';
-import igIcon from '../assets/5335781_camera_instagram_social media_instagram logo_icon.svg';
+import fbIcon from '../assets/facebook_icon.svg';
+import igIcon from '../assets/instagram_icon.svg';
+import ytIcon from '../assets/youtube_icon.svg';
+import { social } from '../data/site.js';
 ---
 
 <aside class="social-float" aria-label="Social links">
 	<div class="tray">
-		<a class="tray-link recolor-on-hover" href="https://facebook.com" aria-label="Facebook" rel="noopener" target="_blank">
+		<a class="tray-link recolor-on-hover" href={social.facebook} aria-label="Facebook" rel="noopener" target="_blank">
 			<img src={fbIcon.src} alt="" width="18" height="18" />
 		</a>
-		<a class="tray-link recolor-on-hover" href="https://twitter.com" aria-label="Twitter" rel="noopener" target="_blank">
-			<img src={twIcon.src} alt="" width="18" height="18" />
-		</a>
-		<a class="tray-link recolor-on-hover" href="https://www.instagram.com/creativelearninghaven/" aria-label="Instagram" rel="noopener" target="_blank">
+		<a class="tray-link recolor-on-hover" href={social.instagram} aria-label="Instagram" rel="noopener" target="_blank">
 			<img src={igIcon.src} alt="" width="18" height="18" />
+		</a>
+		<a class="tray-link recolor-on-hover" href={social.youtube} aria-label="YouTube" rel="noopener" target="_blank">
+			<img src={ytIcon.src} alt="" width="18" height="18" />
 		</a>
 	</div>
 </aside>
