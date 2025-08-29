@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import heroImg from '../assets/P1090543.jpg';
 import libraryGroupImg from '../assets/library_group.avif';
+import groupPhotoImg from '../assets/group_photo.avif';
+import groupStudyImg from '../assets/group_study.avif';
 import ActivitiesCarousel from '../components/ActivitiesCarousel.astro';
 import { activities } from '../data/site.js';
 ---
@@ -58,6 +60,49 @@ import { activities } from '../data/site.js';
 		</div>
 	</section>
 
+	<section class="content-row">
+		<div class="content-text">
+			<h2>Events</h2>
+			<p>Check out our events page to see our exciting upcoming events, workshops, and activities — both in Uganda and the United States.</p>
+			<a href="/events" class="learn-more-btn">Learn More →</a>
+		</div>
+		<div class="content-image">
+			<img src={groupPhotoImg.src} alt="Community members gathered together" />
+		</div>
+	</section>
+
+	<section class="content-row content-row-reverse">
+		<div class="content-image">
+			<img src={groupStudyImg.src} alt="Students studying together in the library" />
+		</div>
+		<div class="content-text">
+			<h2>Socials</h2>
+			<p>We are regularly putting out new content to showcase the lives and stories of our community. Follow along with us on our social media pages to see the latest updates.</p>
+			<a href="/socials" class="learn-more-btn">Learn More →</a>
+		</div>
+	</section>
+
+	{/* Newsletter Signup Section */}
+	<section class="newsletter-signup">
+		<div class="newsletter-container">
+			<div class="newsletter-content">
+				<h2>Stay Connected</h2>
+				<p>Subscribe to our newsletter to learn how you can get involved and receive the latest updates on our work.</p>
+				<form class="newsletter-form" action="/api/subscribe" method="POST">
+					<div class="form-group">
+						<input 
+							type="email" 
+							name="email" 
+							placeholder="Enter your email address" 
+							required
+							class="newsletter-input"
+						>
+						<button type="submit" class="newsletter-button">Subscribe</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
 
 	<script>
 		// Check URL parameters and show toast if user just subscribed
@@ -572,7 +617,6 @@ import { activities } from '../data/site.js';
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: var(--overlay-dark);
 		z-index: -1;
 	}
 
@@ -583,7 +627,7 @@ import { activities } from '../data/site.js';
 		z-index: 1;
 		max-width: 600px;
 		padding: 20px;
-		background: rgba(0, 0, 0, 0.6);
+		background: rgba(0, 0, 0, 0.8);
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 		border-radius: 8px;
 	}
@@ -627,6 +671,174 @@ import { activities } from '../data/site.js';
 
 		.quote-overlay cite {
 			font-size: 14px;
+		}
+	}
+
+	/* Content Row Styles */
+	.content-row {
+		display: flex;
+		align-items: center;
+		gap: 60px;
+		max-width: 1200px;
+		margin: 80px auto;
+		padding: 0 20px;
+	}
+
+	.content-text {
+		flex: 1;
+	}
+
+	.content-text h2 {
+		font-size: 32px;
+		color: var(--primary-color, #2c5530);
+		margin-bottom: 20px;
+		font-weight: 600;
+	}
+
+	.content-text p {
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--text-color, #333);
+		margin-bottom: 0;
+	}
+
+	.content-image {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.content-image img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	}
+
+	@media (max-width: 768px) {
+		.content-row {
+			flex-direction: column;
+			gap: 40px;
+			margin: 60px auto;
+			padding: 0 16px;
+		}
+
+		.content-row-reverse {
+			flex-direction: column;
+		}
+
+		.content-text h2 {
+			font-size: 28px;
+		}
+
+		.content-text p {
+			font-size: 16px;
+		}
+	}
+
+	/* Newsletter Signup Styles */
+	.newsletter-signup {
+		padding: 80px 16px;
+		background: var(--section-light);
+		text-align: left;
+	}
+
+	.newsletter-container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.newsletter-content h2 {
+		font-size: 28px;
+		color: var(--color-subscribe-dark);
+		margin-bottom: 15px;
+		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		text-transform: uppercase;
+	}
+
+	.newsletter-content p {
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--color-text);
+		margin-bottom: 30px;
+	}
+
+	.newsletter-form {
+		display: flex;
+		justify-content: flex-start;
+		gap: 10px;
+	}
+
+	.form-group {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		background: var(--color-white);
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		overflow: hidden;
+		min-width: 400px;
+	}
+
+	.newsletter-input {
+		flex: 1;
+		padding: 12px 16px;
+		border: none;
+		outline: none;
+		font-size: 16px;
+		color: var(--color-text);
+	}
+
+	.newsletter-button {
+		background: var(--color-accent);
+		color: var(--color-teal-ink);
+		border: none;
+		padding: 12px 20px;
+		border-radius: 8px;
+		font-weight: 800;
+		cursor: pointer;
+		transition: background 0.2s ease;
+		white-space: nowrap;
+	}
+
+	.newsletter-button:hover {
+		background: var(--color-accent-dark);
+	}
+
+	@media (max-width: 768px) {
+		.newsletter-signup {
+			padding: 60px 16px;
+		}
+
+		.newsletter-content h2 {
+			font-size: 24px;
+		}
+
+		.newsletter-content p {
+			font-size: 16px;
+		}
+
+		.newsletter-form {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 10px;
+		}
+
+		.form-group {
+			flex-direction: column;
+			align-items: stretch;
+			width: 100%;
+			min-width: auto;
+		}
+
+		.newsletter-input {
+			padding: 10px 16px;
+		}
+
+		.newsletter-button {
+			padding: 10px 16px;
+			width: 100%;
 		}
 	}
 </style>
