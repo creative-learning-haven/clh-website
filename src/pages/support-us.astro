@@ -1,11 +1,557 @@
-
 ---
 import SecondaryPage from '../layouts/SecondaryPage.astro';
 ---
 
-<SecondaryPage title="Support Us">
-	<p>Ways to contribute will appear here.</p>
+<SecondaryPage title="Support Us" heroImage="/src/assets/group_photo.avif">
+	<div class="main-container">
+		<!-- Main Content Column -->
+		<div class="main-content">
+			<!-- Impact Overview -->
+			<div class="impact-overview">
+				<h2 class="section-title">Our Impact</h2>
+				<p class="impact-description">Our 2 libraries support learners in Uganda's Imvepi and Rhino refugee settlements (>200,000 people), where schools are struggling and most people don't have books, internet, or learning materials at home. These are the only community libraries in the area with free book borrowing, literacy classes, and creative activities.</p>
+				<div class="stats-grid">
+					<div class="stat-card">
+						<h3 class="stat-number">800+</h3>
+						<p class="stat-label">People reached at main locations</p>
+					</div>
+					<div class="stat-card">
+						<h3 class="stat-number">150+</h3>
+						<p class="stat-label">Mobile library readers</p>
+					</div>
+					<div class="stat-card">
+						<h3 class="stat-number">1,500+</h3>
+						<p class="stat-label">Books transported</p>
+					</div>
+					<div class="stat-card">
+						<h3 class="stat-number">8</h3>
+						<p class="stat-label">Library staff trained</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Why Libraries Matter & Our Goals -->
+			<div class="two-rows-layout">
+				<!-- First Row: Why Libraries Matter + Image -->
+				<div class="row">
+					<div class="text-content">
+						<h3 class="section-title">Why Are Libraries Essential for Refugees?</h3>
+						<p class="card-text">
+							Schools are struggling with overcrowding (300 students to 1 teacher) and lack of space for reading. Many people don't have smartphones, data, or access to bookstores in the camps. Education has been severely disrupted by war and poverty, particularly affecting South Sudanese refugees who make up 95% of our visitors. Our libraries provide crucial access to books and learning resources that schools and families cannot provide.
+						</p>
+					</div>
+					<div class="image-content">
+						<img src="/src/assets/group_study.avif" alt="Students studying and learning together" class="section-image">
+					</div>
+				</div>
+
+				<!-- Second Row: Image + Our Goals -->
+				<div class="row">
+					<div class="image-content">
+						<img src="/src/assets/group_study.avif" alt="Community members and students together" class="section-image">
+					</div>
+					<div class="text-content">
+						<h3 class="section-title">Our Goals</h3>
+						<ul class="goals-list">
+							<li>Guarantee that learning continues despite challenges with formal education, displacement, and poverty</li>
+							<li>Expand access to books and creative activities with a physical library space and mobile activities</li>
+							<li>Provide an additional educational space to existing schools and NGO/non-profit programs</li>
+							<li>Shape new futures for refugees and Ugandan nationals by creating a culture of independent learning, literacy, and creative exploration</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Fundraising Goal -->
+			<div class="fundraising-goal">
+				<h3 class="section-title">Fundraising Goal</h3>
+				<p class="goal-amount">$20,000 by April 2026</p>
+				<p class="goal-description">to sustain and expand our libraries</p>
+			</div>
+
+			<!-- Donation Impact -->
+			<div class="donation-impact">
+				<h3 class="section-title">Your Donation Makes a Difference</h3>
+				<div class="impact-grid">
+					<div class="impact-card impact-card-yellow">
+						<h4 class="impact-amount">$6</h4>
+						<p class="impact-description">Buys new paint for students who visit 2+ times/week to paint</p>
+					</div>
+					<div class="impact-card impact-card-blue">
+						<h4 class="impact-amount">$8</h4>
+						<p class="impact-description">Puts one more Ugandan curriculum book (the most requested book) on our shelves</p>
+					</div>
+					<div class="impact-card impact-card-green">
+						<h4 class="impact-amount">$10/month</h4>
+						<p class="impact-description">Provides weekly literacy classes for kids</p>
+					</div>
+					<div class="impact-card impact-card-red">
+						<h4 class="impact-amount">$25</h4>
+						<p class="impact-description">Average operating cost for 1 day of 1 library's activities</p>
+					</div>
+					<div class="impact-card impact-card-gray">
+						<h4 class="impact-amount">$36/month</h4>
+						<p class="impact-description">Provides Wifi to one library</p>
+					</div>
+					<div class="impact-card impact-card-light-blue">
+						<h4 class="impact-amount">$80/month</h4>
+						<p class="impact-description">Funds mobile libraries for 4 remote locations and 2 primary schools</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- What Your Donations Support -->
+			<div class="donations-support">
+				<h3 class="section-title">100% of Your Donations Support</h3>
+				<div class="support-grid">
+					<div class="support-item">
+						<h4 class="support-title">📚 Books, Equipment, Furniture</h4>
+					</div>
+					<div class="support-item">
+						<h4 class="support-title">👥 Staff + Facilitator Stipends</h4>
+						<p class="support-subtitle">All are local refugees or Ugandans</p>
+					</div>
+					<div class="support-item">
+						<h4 class="support-title">🚐 5+ Weekly Activities + 4 Mobile Libraries</h4>
+					</div>
+				</div>
+			</div>
+
+			<!-- Quotes -->
+			<div class="quote-card quote-card-yellow">
+				<blockquote class="quote">
+					<p class="quote-text">"We don't want this generation of South Sudanese, Congolese, or Ugandans to miss the opportunity of education"</p>
+					<footer class="quote-author">— Peter Hardrock (CLH Imvepi Team Lead)</footer>
+				</blockquote>
+			</div>
+
+			<div class="quote-card quote-card-blue">
+				<blockquote class="quote">
+					<p class="quote-text">"When you now have the knowledge to read and write, it's better for you to teach yourself ... It can build you faster than waiting for teachers."</p>
+					<footer class="quote-author">— Enock, our friend and carpenter who constructed our shelf (Imvepi)</footer>
+				</blockquote>
+			</div>
+
+			<!-- Final Message -->
+			<div class="final-message">
+				<p class="message-title">Knowledge is power, and knowledge is peace.</p>
+				<p class="message-text">We hope to build the futures of Uganda, South Sudan, and refugees in Rhino & Imvepi camps.</p>
+			</div>
+
+			<!-- Partners -->
+			<div class="partners-section">
+				<h3 class="section-title">Our Partners</h3>
+				<p class="partners-description">CLH is implemented by Hope Rising South Sudan (HoRiSS), Youth Social Advocacy Team (YSAT) Uganda, and Luyao (Lulu) Tian, with the support of Hope Foundation Uganda and UNHCR (UN Refugee Agency).</p>
+				<p class="partners-note">Creative Learning Haven (CLH) started in January 2025</p>
+			</div>
+		</div> <!-- End Main Content Column -->
+
+		<!-- Floating Payment Options Box -->
+		<div class="payment-box">
+			<h3 class="section-title">Support Our Libraries</h3>
+
+			<!-- Donate Section -->
+			<div class="donate-section">
+				<h4 class="donate-title">Donate Now</h4>
+				<div class="donation-options">
+					<div class="donation-option">
+						<h5 class="option-name">GoFundMe</h5>
+						<p class="option-status">Link coming soon</p>
+					</div>
+					<div class="donation-option">
+						<h5 class="option-name">Venmo</h5>
+						<p class="option-status">Details coming soon</p>
+					</div>
+					<div class="donation-option">
+						<h5 class="option-name">Zelle</h5>
+						<p class="option-status">Details coming soon</p>
+					</div>
+				</div>
+				<p class="donate-note">For other ways to donate, DM: @creativelearninghaven on Instagram</p>
+			</div>
+		</div> <!-- End Floating Payment Options Box -->
+	</div>
 </SecondaryPage>
 
+<style>
+	.main-container {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		max-width: 1400px;
+		margin: 0 auto;
+		line-height: 1.6;
+	}
 
+	.main-content {
+		text-align: center;
+	}
 
+	.section-title {
+		color: #2c5aa0;
+		margin-bottom: 1rem;
+	}
+
+	.impact-overview {
+		background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
+		padding: 2rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+	}
+
+	.impact-description {
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.stat-card {
+		background: white;
+		padding: 1rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.stat-number {
+		color: #2c5aa0;
+		margin: 0;
+	}
+
+	.stat-label {
+		margin: 0;
+		font-size: 0.9rem;
+	}
+
+	.two-column-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.two-rows-layout {
+		margin-bottom: 3rem;
+	}
+
+	.two-rows-layout .row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+
+	.two-rows-layout .row:last-child {
+		margin-bottom: 0;
+	}
+
+	.text-content {
+		padding: 1rem 0;
+		text-align: left;
+		border-radius: 12px;
+	}
+
+	.image-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.section-image {
+		max-width: 100%;
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	}
+
+	.info-card {
+		text-align: left;
+		background: #f8f9fa;
+		padding: 2rem;
+		border-radius: 12px;
+	}
+
+	.card-text {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.goals-list {
+		margin: 0;
+		padding-left: 1.5rem;
+		line-height: 1.6;
+	}
+
+	.fundraising-goal {
+		background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+		color: white;
+		padding: 2rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+	}
+
+	.goal-amount {
+		font-size: 1.5rem;
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+
+	.goal-description {
+		margin: 0;
+		opacity: 0.9;
+	}
+
+	.donation-impact {
+		margin-bottom: 2rem;
+	}
+
+	.impact-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1rem;
+	}
+
+	.impact-card {
+		padding: 1.5rem;
+		border-radius: 8px;
+		border-left: 4px solid;
+	}
+
+	.impact-card-yellow {
+		background: #fff3cd;
+		border-left-color: #ffc107;
+	}
+
+	.impact-card-blue {
+		background: #d1ecf1;
+		border-left-color: #17a2b8;
+	}
+
+	.impact-card-green {
+		background: #d4edda;
+		border-left-color: #28a745;
+	}
+
+	.impact-card-red {
+		background: #f8d7da;
+		border-left-color: #dc3545;
+	}
+
+	.impact-card-gray {
+		background: #e2e3e5;
+		border-left-color: #6c757d;
+	}
+
+	.impact-card-light-blue {
+		background: #cce5ff;
+		border-left-color: #007bff;
+	}
+
+	.impact-amount {
+		margin: 0 0 0.5rem 0;
+	}
+
+	.impact-card-yellow .impact-amount {
+		color: #856404;
+	}
+
+	.impact-card-blue .impact-amount {
+		color: #0c5460;
+	}
+
+	.impact-card-green .impact-amount {
+		color: #155724;
+	}
+
+	.impact-card-red .impact-amount {
+		color: #721c24;
+	}
+
+	.impact-card-gray .impact-amount {
+		color: #495057;
+	}
+
+	.impact-card-light-blue .impact-amount {
+		color: #004085;
+	}
+
+	.impact-description {
+		margin: 0;
+		font-size: 0.9rem;
+	}
+
+	.donations-support {
+		background: #f8f9fa;
+		padding: 2rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+	}
+
+	.support-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+
+	.support-item {
+		text-align: center;
+	}
+
+	.support-title {
+		color: #2c5aa0;
+		margin: 0 0 0.5rem 0;
+	}
+
+	.support-subtitle {
+		margin: 0;
+		font-size: 0.9rem;
+	}
+
+	.quote-card {
+		padding: 2rem;
+		border-radius: 12px;
+		margin-bottom: 2rem;
+		border-left: 6px solid;
+	}
+
+	.quote-card-yellow {
+		background: #fff3cd;
+		border-left-color: #ffc107;
+	}
+
+	.quote-card-blue {
+		background: #d1ecf1;
+		border-left-color: #17a2b8;
+	}
+
+	.quote {
+		margin: 0;
+		font-style: italic;
+		font-size: 1.1rem;
+	}
+
+	.quote-text {
+		margin: 0 0 1rem 0;
+	}
+
+	.quote-author {
+		text-align: right;
+		font-weight: bold;
+	}
+
+	.final-message {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.message-title {
+		font-size: 1.2rem;
+		font-weight: bold;
+		color: #2c5aa0;
+		margin-bottom: 1rem;
+	}
+
+	.message-text {
+		margin: 0;
+	}
+
+	.partners-section {
+		background: #f8f9fa;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.partners-description {
+		margin-bottom: 1rem;
+	}
+
+	.partners-note {
+		margin: 0;
+		font-size: 0.9rem;
+		color: #666;
+	}
+
+	.payment-box {
+		position: sticky;
+		top: 6rem;
+		height: fit-content;
+		background: white;
+		border: 2px solid #e8f4fd;
+		border-radius: 12px;
+		padding: 2rem;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+
+	.donate-section {
+		margin-bottom: 1.5rem;
+	}
+
+	.donate-title {
+		color: #2c5aa0;
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+
+	.donation-options {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.donation-option {
+		background: #e8f4fd;
+		padding: 1rem;
+		border-radius: 6px;
+		min-width: 200px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.option-name {
+		margin: 0 0 0.25rem 0;
+		color: #2c5aa0;
+	}
+
+	.option-status {
+		margin: 0;
+		color: #666;
+		font-size: 0.8rem;
+	}
+
+	.donate-note {
+		margin-top: 1rem;
+		font-size: 0.8rem;
+		color: #666;
+		text-align: center;
+	}
+
+	@media (max-width: 768px) {
+		.main-container {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.two-column-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.two-rows-layout .row {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.image-content {
+			order: -1;
+		}
+
+		.payment-box {
+			position: static;
+		}
+	}
+</style>

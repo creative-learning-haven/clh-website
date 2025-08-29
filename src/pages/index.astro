@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import heroImg from '../assets/P1090543.jpg';
+import groupStudyImg from '../assets/group_study.avif';
+import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 ---
 
 <Layout>
@@ -21,12 +23,34 @@ import heroImg from '../assets/P1090543.jpg';
 				<span>Knowledge is</span>
 				<span class="line2">Peace</span>
 			</h1>
-			<p class="tagline">Creative Learning Haven is a community library project in Uganda's Rhino and Imvepi Refugee Settlements.</p>
-			<p class="subtitle">Free access to reading and creative activities will change the futures of refugees and local communities in Uganda.</p>
+			<p class="tagline">Creative Learning Haven is building libraries in Uganda's Rhino and Imvepi Refugee Settlements. Free access to reading and creative activities will change the futures of refugees and local communities in Uganda.</p>
 		</div>
 	</section>
 
-	<section class="panels">
+	<section class="cards-section">
+		<div class="cards-container">
+			<div class="text-column">
+				<h3>Our Mission</h3>
+				<p>Uganda's Imvepi and Rhino refugee settlements were established to shelter people fleeing conflict in South Sudan. Today, one of the greatest needs that these communities face is access to education and reading. Creative Learning Haven was founded to meet this need by creating libraries and learning spaces, run by members ofthe communities they serve.</p>
+			</div>
+			
+			<div class="text-column">
+				<h3>What We Do</h3>
+				<ul>
+					<li>Create libraries where books are organized systematically and can be borrowed freely</li>
+					<li>Run creative and literacy activities based on community needs</li>
+					<li>Train staff in advanced project management and librarian skills</li>
+					<li>Empower local talent to lead activities</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="button-container">
+			<a href="/about" class="learn-more-btn">Learn More About Who We Are</a>
+		</div>
+	</section>
+
+	<!-- <section class="panels">
 		<div class="panel mission">
 			<h2>Our Mission</h2>
 			<p>When formal education is unreliable, <strong>one must be able to learn independently</strong>. Our libraries provide materials and space for independent learning, helping learners in struggling schools and curious adults continue to grow.</p>
@@ -49,9 +73,77 @@ import heroImg from '../assets/P1090543.jpg';
 				<button type="submit">Subscribe</button>
 			</form>
 		</div>
+	</section> -->
+
+
+
+
+	<!-- <h2 class="activities-title">OUR ACTIVITIES</h2> -->
+
+	<section class="activity-section">
+		<div class="activity-content">
+			<div class="activity-text">
+				<h3>Our Mission</h3>
+				<p>Uganda's Imvepi and Rhino refugee settlements were established to shelter people fleeing conflict in South Sudan. Today, one of the greatest needs that these communities face is access to education and reading. Creative Learning Haven was founded to meet this need by creating libraries and learning spaces, run by members ofthe communities they serve.</p>
+				<a href="/about" class="learn-more-btn">Learn More About Who We Are</a> 
+			</div>
+			<div class="activity-images">
+				<img src={groupStudyImg.src} alt="Our Mission" />
+			</div>
+		</div>
 	</section>
 
-	<h2 class="activities-title">OUR ACTIVITIES</h2>
+	<section class="activity-section">
+		<div class="activity-content reverse">
+			<div class="activity-text">
+				<h3>Literacy Class</h3>
+				<p>Schools in the settlements can have as many as 300 students per teacher. Many primary schoolers don't get the literacy education they need. To fill the gap, we offer literacy classes for students in primary 3 to 5. We cover the alphabet, basic phonics, and use the <a href="https://readinguniverse.org/article/explore-teaching-topics/features-of-structured-literacy-instruction/what-is-structured-literacy" target="_blank">Structured Literacy</a> approach. This way, students can benefit from the books in our libraries and beyond.</p>
+			</div>
+			<div class="activity-images">
+				<div class="image-collage">
+					<div class="image-placeholder">Image 1</div>
+					<div class="image-placeholder">Image 2</div>
+					<div class="image-placeholder">Image 3</div>
+					<div class="image-placeholder">Image 4</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="activity-section">
+		<div class="activity-content">
+			<div class="activity-text">
+				<h3>Creative Arts</h3>
+				<p>Visitors to our libraries want to draw, take photos, write, and tell stories. However, these activities have been historically undervalued in the settlements. We create space for art and creativity not only for the mental health benefits they provide, but to preserve the voices and stories of Imvepi and Rhino for future generations.</p>
+			</div>
+			<div class="activity-images">
+				<div class="image-collage">
+					<div class="image-placeholder">Image 1</div>
+					<div class="image-placeholder">Image 2</div>
+					<div class="image-placeholder">Image 3</div>
+					<div class="image-placeholder">Image 4</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+		<section class="activity-section">
+		<div class="activity-content reverse">
+			<div class="activity-text">
+				<h3>Women's Group</h3>
+				<p>82% of refugees in the Imvepi and Rhino settlements are women and children. To address the needs of the women and girls in these communities, we have creative arts and income-generating activities for women. We will soon begin offering literacy classes for women as well.</p>
+			</div>
+			<div class="activity-images">
+				<div class="image-collage">
+					<div class="image-placeholder">Image 1</div>
+					<div class="image-placeholder">Image 2</div>
+					<div class="image-placeholder">Image 3</div>
+					<div class="image-placeholder">Image 4</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 	<script>
 		// Check URL parameters and show toast if user just subscribed
@@ -86,10 +178,9 @@ import heroImg from '../assets/P1090543.jpg';
 <style>
 	.hero {
 		position: relative;
-		min-height: 68vh;
+		min-height: 40vh;
 		/* top: fade into white; middle: dark overlay; bottom: image */
 		background-image:
-			linear-gradient(to bottom, rgba(255,255,255,0) 84%, rgba(255,255,255,0.9) 96%, var(--color-white) 100%),
 			linear-gradient(180deg, var(--overlay-dark) 0%, var(--overlay-dark) 100%),
 			var(--hero-image);
 		background-size: 100% 100%, 100% 100%, 100% auto; /* overlays cover, image fits width */
@@ -103,7 +194,7 @@ import heroImg from '../assets/P1090543.jpg';
 
 	.hero-inner {
 		max-width: 940px;
-		padding: 6vh 16px 8vh;
+		padding: 4vh 16px 5vh;
 		text-align: center;
 	}
 
@@ -127,6 +218,84 @@ import heroImg from '../assets/P1090543.jpg';
 		.hero-inner > * { animation: none; opacity: 1; transform: none; filter: none; }
 	}
 
+	/* Cards Section Styles */
+	.cards-section {
+		padding: 60px 16px;
+		background: var(--section-light);
+	}
+
+	.cards-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 60px;
+		margin-bottom: 40px;
+		position: relative;
+	}
+
+	.cards-container::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background: var(--color-subscribe-dark);
+		opacity: 0.3;
+		transform: translateX(-50%);
+	}
+
+	.text-column h3 {
+		font-size: 24px;
+		margin: 0 0 20px 0;
+		color: var(--color-subscribe-dark);
+		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		text-transform: uppercase;
+	}
+
+	.text-column p {
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--color-text);
+		margin: 0;
+	}
+
+	.text-column ul {
+		list-style-type: disc;
+		padding-left: 20px;
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--color-text);
+		margin: 0;
+	}
+
+	.button-container {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	@media (max-width: 900px) {
+		.cards-container {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.cards-section {
+			padding: 40px 16px;
+		}
+		
+		.text-column h3 {
+			font-size: 20px;
+		}
+		
+		.text-column p {
+			font-size: 16px;
+		}
+	}
+
 	.tagline {
 		display: inline-block;
 		font-size: 1.2em;
@@ -139,7 +308,8 @@ import heroImg from '../assets/P1090543.jpg';
 
 	h1 {
 		margin: 10px 0 6px;
-		font-size: clamp(34px, 7vw, 76px);
+		/* font-size: clamp(34px, 7vw, 76px); */
+		font-size: 50px;
 		line-height: 0.95;
 		text-transform: uppercase;
 	}
@@ -229,8 +399,8 @@ import heroImg from '../assets/P1090543.jpg';
 		color: var(--color-subscribe-dark);
 		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 		text-transform: uppercase;
-		letter-spacing: .18em;
-		font-size: clamp(18px, 3.2vw, 28px);
+		/* letter-spacing: .18em; */
+		font-size: clamp(18px, 5em, 40px);
 	}
 
 	/* Toast notification styles */
@@ -317,5 +487,128 @@ import heroImg from '../assets/P1090543.jpg';
 
 	.toast.hiding {
 		animation: toastSlideOut 0.3s ease-in forwards;
+	}
+
+	/* Activity sections styles */
+	.activity-section {
+		margin: 60px auto;
+		max-width: 1200px;
+		padding: 0 16px;
+	}
+
+	.activity-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+	}
+
+	.activity-content.reverse {
+		direction: rtl;
+	}
+
+	.activity-content.reverse > * {
+		direction: ltr;
+	}
+
+	.activity-text h3 {
+		font-size: clamp(14px, 2vw, 28px);
+		margin-bottom: 20px;
+		color: var(--color-subscribe-dark);
+		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		text-transform: uppercase;
+	}
+
+	.activity-text p {
+		font-size: 18px;
+		line-height: 1.6;
+		color: var(--color-text);
+		margin: 0;
+	}
+
+	.learn-more-btn {
+		display: inline-block;
+		margin-top: 20px;
+		padding: 12px 24px;
+		background: var(--color-subscribe-dark);
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 700;
+		transition: all 0.2s ease;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.learn-more-btn:hover {
+		background: var(--color-accent);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	}
+
+	.activity-images {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.image-collage {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 12px;
+		width: 100%;
+		max-width: 400px;
+		aspect-ratio: 1;
+	}
+
+	.image-placeholder {
+		background: var(--section-light);
+		border: 2px dashed var(--color-subscribe-dark);
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-subscribe-dark);
+		font-weight: 600;
+		font-size: 14px;
+		transition: all 0.2s ease;
+	}
+
+	.learn-more-btn {
+		display: inline-block;
+		margin-top: 20px;
+		padding: 12px 24px;
+		background: var(--color-subscribe-dark);
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 700;
+		transition: all 0.2s ease;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	}
+
+	.learn-more-btn:hover {
+		background: var(--color-accent);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	}
+
+	@media (max-width: 768px) {
+		.activity-content {
+			grid-template-columns: 1fr;
+			gap: 40px;
+		}
+
+		.activity-content.reverse {
+			direction: ltr;
+		}
+
+		.activity-section {
+			margin: 40px auto;
+		}
+
+		.image-collage {
+			max-width: 300px;
+		}
 	}
 </style>
