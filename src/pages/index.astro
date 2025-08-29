@@ -20,10 +20,9 @@ import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 	<section class="hero" style={`--hero-image: url(${heroImg.src})`}>
 		<div class="hero-inner">
 			<h1>
-				<span>Knowledge is</span>
-				<span class="line2">Peace</span>
+				<span>Knowledge is Peace</span>
 			</h1>
-			<p class="tagline">Creative Learning Haven is building libraries in Uganda's Rhino and Imvepi Refugee Settlements. Free access to reading and creative activities will change the futures of refugees and local communities in Uganda.</p>
+			<p class="tagline">Building libraries to create a brighter future for members of Uganda's refugee settlements</p>
 		</div>
 	</section>
 
@@ -146,21 +145,40 @@ import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 	.hero {
 		position: relative;
 		min-height: 40vh;
-		/* top: fade into white; middle: dark overlay; bottom: image */
-		background-image:
-			linear-gradient(180deg, var(--overlay-dark) 0%, var(--overlay-dark) 100%),
-			var(--hero-image);
-		background-size: 100% 100%, 100% 100%, 100% auto; /* overlays cover, image fits width */
-		background-position: center top, center top, center top;
-		background-repeat: no-repeat, no-repeat, no-repeat;
 		color: white;
 		display: grid;
 		place-items: center;
 		z-index: 0;
+		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image: var(--hero-image);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		z-index: -2;
+	}
+
+	.hero::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--overlay-dark);
+		z-index: -1;
 	}
 
 	.hero-inner {
-		max-width: 940px;
+		/* max-width: 940px; */
 		padding: 4vh 16px 5vh;
 		text-align: center;
 	}
@@ -265,8 +283,9 @@ import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 	.tagline {
 		display: inline-block;
 		font-size: 1.2em;
-		max-width: 700px;
+		max-width: 1400px;
 		padding: 8px 14px;
+		margin-top: 60px;
 		border-radius: 10px;
 		letter-spacing: .08em;
 		font-weight: 800; // uses Avenir Heavy
