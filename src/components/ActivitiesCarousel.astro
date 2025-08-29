@@ -1,0 +1,308 @@
+---
+// Activities carousel component
+// Shows 3 items at a time with navigation
+// Includes a "Learn more about our activities" link to the blog
+
+export interface Props {
+  activities: Array<{
+    image: any; // Astro image import
+    heading: string;
+    text: string;
+  }>;
+}
+
+const { activities } = Astro.props;
+---
+
+<div class="activities-carousel">
+  <div class="carousel-wrapper">
+    <!-- Left navigation button -->
+    <button class="carousel-nav carousel-prev" id="carousel-prev" aria-label="Previous">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    
+    <!-- Main carousel container -->
+    <div class="carousel-container">
+      <div class="carousel-track" id="carousel-track">
+        {activities.map((activity, index) => (
+          <div class="carousel-item">
+            <div class="activity-card">
+              <div class="card-image">
+                <img src={activity.image.src} alt={activity.heading} />
+              </div>
+              <div class="card-content">
+                <h3 class="card-heading">{activity.heading}</h3>
+                <div class="card-text" set:html={activity.text}></div>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        <!-- Learn more link as the last item -->
+        <div class="carousel-item">
+          <div class="learn-more-container">
+            <a href="/blog" class="learn-more-btn carousel-learn-more">
+              Learn more about our activities →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right navigation button -->
+    <button class="carousel-nav carousel-next" id="carousel-next" aria-label="Next">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  class ActivitiesCarousel {
+    track: HTMLElement | null;
+    prevBtn: HTMLElement | null;
+    nextBtn: HTMLElement | null;
+    currentIndex: number;
+    totalItems: number;
+    visibleItems: number;
+    
+    constructor() {
+      this.track = document.getElementById('carousel-track');
+      this.prevBtn = document.getElementById('carousel-prev');
+      this.nextBtn = document.getElementById('carousel-next');
+      this.currentIndex = 0;
+      this.totalItems = this.track?.children.length || 0;
+      this.visibleItems = 3;
+      
+      this.init();
+    }
+    
+    init() {
+      if (!this.track || !this.prevBtn || !this.nextBtn) return;
+      
+      this.prevBtn.addEventListener('click', () => this.navigate(-1));
+      this.nextBtn.addEventListener('click', () => this.navigate(1));
+      
+      // Set initial state
+      this.updateNavigation();
+      this.updateTrackPosition();
+    }
+    
+    navigate(direction: number) {
+      this.currentIndex += direction;
+      
+      // Handle wrap-around
+      if (this.currentIndex < 0) {
+        this.currentIndex = this.totalItems - this.visibleItems;
+      } else if (this.currentIndex > this.totalItems - this.visibleItems) {
+        this.currentIndex = 0;
+      }
+      
+      this.updateTrackPosition();
+      this.updateNavigation();
+    }
+    
+    updateTrackPosition() {
+      const itemWidth = 100 / this.visibleItems;
+      const translateX = -(this.currentIndex * itemWidth);
+      this.track!.style.transform = `translateX(${translateX}%)`;
+    }
+    
+    updateNavigation() {
+      // Show/hide navigation buttons based on position
+      this.prevBtn!.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
+      this.nextBtn!.style.opacity = this.currentIndex >= this.totalItems - this.visibleItems ? '0.5' : '1';
+    }
+  }
+  
+  // Initialize carousel when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new ActivitiesCarousel();
+  });
+</script>
+
+<style>
+  .activities-carousel {
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 30px 8px;
+    flex: 1;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .carousel-item {
+    flex: 0 0 calc(100% / 3);
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+  
+  .activity-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+
+  
+  .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+
+  
+  .card-content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-heading {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--color-ink);
+    line-height: 1.3;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-ink);
+    margin: 0;
+    flex: 1;
+  }
+  
+  .learn-more-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 300px;
+  }
+  
+  .carousel-learn-more {
+    font-size: 18px;
+    padding: 16px 32px;
+    background: var(--color-brand);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(215, 155, 79, 0.3);
+    text-align: center;
+    max-width: 280px;
+  }
+  
+  .carousel-learn-more:hover {
+    background: var(--color-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(215, 155, 79, 0.4);
+  }
+  
+  .carousel-nav {
+    background: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  
+  .carousel-nav:hover {
+    background: var(--color-accent);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carousel-nav:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+
+  
+  .carousel-nav svg {
+    color: var(--color-ink);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .carousel-item {
+      flex: 0 0 calc(100% / 2);
+    }
+    
+    .visibleItems {
+      --visible-items: 2;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .carousel-item {
+      flex: 0 0 100%;
+    }
+    
+    .visibleItems {
+      --visible-items: 1;
+    }
+    
+    .carousel-nav {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .card-content {
+      padding: 20px;
+    }
+    
+    .card-heading {
+      font-size: 18px;
+    }
+    
+    .card-text {
+      font-size: 15px;
+    }
+  }
+</style>

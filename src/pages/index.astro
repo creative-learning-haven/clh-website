@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import heroImg from '../assets/P1090543.jpg';
-import groupStudyImg from '../assets/group_study.avif';
-import InstagramEmbeds from '../components/InstagramEmbeds.astro';
+import ActivitiesCarousel from '../components/ActivitiesCarousel.astro';
+import { activities } from '../data/site.js';
 ---
 
 <Layout>
@@ -30,7 +30,7 @@ import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 		<div class="cards-container">
 			<div class="text-column">
 				<h3>Our Mission</h3>
-				<p>Uganda's Imvepi and Rhino refugee settlements were established to shelter people fleeing conflict in South Sudan. Today, one of the greatest needs that these communities face is access to education and reading. Creative Learning Haven was founded to meet this need by creating libraries and learning spaces, run by members ofthe communities they serve.</p>
+				<p>Uganda's Imvepi and Rhino refugee settlements were established to shelter people fleeing conflict in South Sudan. Today, one of the greatest needs that these communities face is access to education and reading. Creative Learning Haven was founded to meet this need by creating libraries and learning spaces, run by members of the communities they serve.</p>
 				<br/>
 				<!-- <a href="/about">Learn More About Who We Are →</a> -->
 			</div>
@@ -44,71 +44,9 @@ import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 		</div>
 	</section>
 
-	<!-- <h2 class="activities-title">OUR ACTIVITIES</h2> -->
+	<h2 class="activities-title">What We Do</h2>
 
-	<section class="activity-section">
-		<div class="activity-content">
-			<div class="activity-text">
-				<h3>Our Mission</h3>
-				<p>Uganda's Imvepi and Rhino refugee settlements were established to shelter people fleeing conflict in South Sudan. Today, one of the greatest needs that these communities face is access to education and reading. Creative Learning Haven was founded to meet this need by creating libraries and learning spaces, run by members ofthe communities they serve.</p>
-				<a href="/about" class="learn-more-btn">Learn More About Who We Are</a> 
-			</div>
-			<div class="activity-images">
-				<img src={groupStudyImg.src} alt="Our Mission" />
-			</div>
-		</div>
-	</section>
-
-	<section class="activity-section">
-		<div class="activity-content reverse">
-			<div class="activity-text">
-				<h3>Literacy Class</h3>
-				<p>Schools in the settlements can have as many as 300 students per teacher. Many primary schoolers don't get the literacy education they need. To fill the gap, we offer literacy classes for students in primary 3 to 5. We cover the alphabet, basic phonics, and use the <a href="https://readinguniverse.org/article/explore-teaching-topics/features-of-structured-literacy-instruction/what-is-structured-literacy" target="_blank">Structured Literacy</a> approach. This way, students can benefit from the books in our libraries and beyond.</p>
-			</div>
-			<div class="activity-images">
-				<div class="image-collage">
-					<div class="image-placeholder">Image 1</div>
-					<div class="image-placeholder">Image 2</div>
-					<div class="image-placeholder">Image 3</div>
-					<div class="image-placeholder">Image 4</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="activity-section">
-		<div class="activity-content">
-			<div class="activity-text">
-				<h3>Creative Arts</h3>
-				<p>Visitors to our libraries want to draw, take photos, write, and tell stories. However, these activities have been historically undervalued in the settlements. We create space for art and creativity not only for the mental health benefits they provide, but to preserve the voices and stories of Imvepi and Rhino for future generations.</p>
-			</div>
-			<div class="activity-images">
-				<div class="image-collage">
-					<div class="image-placeholder">Image 1</div>
-					<div class="image-placeholder">Image 2</div>
-					<div class="image-placeholder">Image 3</div>
-					<div class="image-placeholder">Image 4</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-		<section class="activity-section">
-		<div class="activity-content reverse">
-			<div class="activity-text">
-				<h3>Women's Group</h3>
-				<p>82% of refugees in the Imvepi and Rhino settlements are women and children. To address the needs of the women and girls in these communities, we have creative arts and income-generating activities for women. We will soon begin offering literacy classes for women as well.</p>
-			</div>
-			<div class="activity-images">
-				<div class="image-collage">
-					<div class="image-placeholder">Image 1</div>
-					<div class="image-placeholder">Image 2</div>
-					<div class="image-placeholder">Image 3</div>
-					<div class="image-placeholder">Image 4</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<ActivitiesCarousel activities={activities} />
 
 
 	<script>
@@ -385,7 +323,7 @@ import InstagramEmbeds from '../components/InstagramEmbeds.astro';
 		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 		text-transform: uppercase;
 		/* letter-spacing: .18em; */
-		font-size: clamp(18px, 5em, 40px);
+		font-size: clamp(18px, 2em, 40px);
 	}
 
 	/* Toast notification styles */
