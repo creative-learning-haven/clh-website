@@ -1,64 +1,419 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import horissImg from '../assets/Horiss logo.jpg';
+import ysatImg from '../assets/ysat_logo.png';
+import winchesterImg from '../assets/winchester_logo.png';
 ---
 
 <Layout>
 	<section class="page">
-		<h1>About</h1>
-		<p>Creative Learning Haven (CLH) runs 2 community libraries in Uganda’s Imvepi and Rhino refugee camps since January 2025.</p>
-		<p>These additional learning spaces are the first of their kind in the camps.</p>
-		<p style="margin-top: 40px;">Our project is run by Lulu Tian and 2 refugee-led organizations:</p>
-
-		<div class="orgs">
-			<div class="org">
-				<img src={horissImg.src} alt="Hope Rising South Sudan" />
-			</div>
-			<div class="org tbd">Lulu what is the other org</div>
+		<div class="hero">
+			<h1>About Us</h1>
+			<p class="hero-text">
+				Creative Learning Haven (CLH) creates and runs community libraries in the Imvepi and Rhino refugee settlements in Uganda by partnering with local, refugee-led organizations. These are the first spaces of their kind in the camps, offering free access to books, learning, and creativity.
+			</p>
 		</div>
 
-		<a class="support-btn recolor-on-hover" href="/support-us">SUPPORT US TODAY</a>
+		<div class="partnership-section">
+			<h2>Who We Are</h2>
+			<div class="partners-grid">
+				<div class="partner-card">
+					<div class="partner-logo">
+						<img src={horissImg.src} alt="Hope Rising South Sudan" />
+					</div>
+					<h3>Imvepi CLH</h3>
+					<p>Library branch run by Hope Rising South Sudan (HoRiSS)</p>
+				</div>
+				<div class="partner-card">
+					<div class="partner-logo">
+						<img src={ysatImg.src} alt="Youth Social Advocacy Team" />
+					</div>
+					<h3>Rhino CLH</h3>
+					<p>Library branch run by Youth Social Advocacy Team (YSAT)</p>
+				</div>
+				<div class="partner-card">
+					<div class="partner-logo">
+						<img src={winchesterImg.src} alt="Winchester" />
+					</div>
+					<h3>Winchester CLH</h3>
+					<p>Supported by students in Winchester, MA who volunteer with curriculum design, outreach, and fundraising</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="story-section">
+			<h2>Our Story</h2>
+			<p>
+				CLH began when Peter, Otim, and Lulu saw the urgent need for access to books and learning in the settlements. Through U.S. book drives and fundraising, partnerships in the settlements, and local community surveys, the libraries were built not only to provide books but also to address the community's needs.
+			</p>
+		</div>
+
+		<div class="what-we-do-section">
+			<h2>What We Do</h2>
+			
+			<div class="service-card">
+				<h3>Train Community Librarians</h3>
+				<p>
+					We empower community members to become librarians. Our librarians learn book categorization, information literacy, digital skills, and project management, while also using their knowledge of their community to run our libraries in a context-specific way.
+				</p>
+			</div>
+
+			<div class="service-card">
+				<h3>Build a Reading Culture</h3>
+				<p>
+					Librarians actively recommend books, teach information literacy, and connect every activity (from art to storytelling) back to reading.
+				</p>
+			</div>
+
+			<div class="service-card">
+				<h3>Support Schools</h3>
+				<p>
+					Schools in the camps face severe challenges: teacher shortages, funding cuts, and overcrowding. CLH libraries provide an essential additional learning space, supporting both students and teachers.
+				</p>
+			</div>
+		</div>
+
+		<div class="impact-section">
+			<h2>Impact So Far</h2>
+			<div class="impact-stats">
+				<div class="stat">
+					<div class="stat-number">800+</div>
+					<div class="stat-label">People Reached</div>
+				</div>
+				<div class="stat">
+					<div class="stat-number">2,000+</div>
+					<div class="stat-label">Books Circulated</div>
+				</div>
+				<div class="stat">
+					<div class="stat-number">15+</div>
+					<div class="stat-label">Staff Employed</div>
+				</div>
+			</div>
+			<p class="impact-note">
+				Special thanks to partners who have donated books and materials: Pangea Educational Development, Transcultural Psychosocial Organization (TPO), Imvepi Secondary School, Awa Primary School, MIT D-Lab, and many others.
+			</p>
+		</div>
+
+		<div class="goals-section">
+			<h2>Our Goals</h2>
+			<div class="goals-list">
+				<div class="goal-item">
+					<span class="goal-icon">🎓</span>
+					<p>Increase graduation rates from secondary school in the camps</p>
+				</div>
+				<div class="goal-item">
+					<span class="goal-icon">📚</span>
+					<p>Support more students to continue from primary to secondary school</p>
+				</div>
+				<div class="goal-item">
+					<span class="goal-icon">🎨</span>
+					<p>Share the art and stories of Imvepi and Rhino communities through social media</p>
+				</div>
+				<div class="goal-item">
+					<span class="goal-icon">🚶</span>
+					<p>Ensure every person can access free books and educational materials within a 30-minute walk</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="partners-section">
+			<h2>Special Thanks</h2>
+			<p class="partners-intro">
+				We're grateful to our partners who have contributed books and materials to make our libraries possible:
+			</p>
+			<div class="partners-grid">
+				<a href="https://www.pangeaeducation.org/" class="partner-link">Pangea Educational Development</a>
+				<a href="https://www.mhinnovation.net/organisations/transcultural-psychosocial-organization-tpo-uganda" class="partner-link">Transcultural Psychosocial Organization (TPO)</a>
+				<a href="https://www.s-t-a-d.org/wp-content/uploads/2018/08/IMVEPI-SECONDARY-SCHOOL-2018.pdf" class="partner-link">Imvepi Secondary School</a>
+				<a href="#" class="partner-link">Awa Primary School</a>
+				<a href="https://d-lab.mit.edu/" class="partner-link">MIT D-Lab</a>
+			</div>
+		</div>
+
+		<div class="cta-section">
+			<a class="support-btn recolor-on-hover" href="/support-us">SUPPORT US TODAY</a>
+		</div>
 	</section>
 </Layout>
 
 <style>
 	.page {
-		max-width: 500px;
-		margin: 32px auto;
+		max-width: 900px;
+		margin: 0 auto;
 		padding: 0 16px;
+	}
+
+	.hero {
+		text-align: center;
+		margin: 60px 0 80px;
+	}
+
+	h1 { 
+		color: var(--color-hover); 
+		margin-bottom: 24px; 
+		margin-top: 0;
+		font-size: 3rem;
+		text-align: center; 
+	}
+
+	.hero-text {
+		font-size: 1.2rem;
+		line-height: 1.7;
+		max-width: 700px;
+		margin: 0 auto;
+		color: var(--color-ink);
+	}
+
+	h2 {
+		color: var(--color-brand);
+		font-size: 2.2rem;
 		text-align: center;
 	}
 
-	h1 { color: var(--color-hover); margin-bottom: 12px; margin-top: 100px; text-align: center; }
+	h3 {
+		color: var(--color-ink);
+		font-size: 1.4rem;
+		margin: 0 0 16px;
+	}
 
-	p { margin: 8px auto; line-height: 1.6; text-align: justify; }
+	p {
+		line-height: 1.7;
+		margin: 16px 0;
+		color: var(--color-ink);
+	}
 
-	.orgs {
-		margin-top: 40px;
+	/* Partnership Section */
+	.partnership-section {
+		margin: 80px 0;
+	}
+
+	.partners-grid {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 12px;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 30px;
+		margin-top: 40px;
 	}
 
-	.org {
-		place-items: center;
+	.partner-card {
+		background: white;
+		padding: 4px;
+		text-align: center;
 	}
 
-	.org img { width: 90%; height: 90%; object-fit: contain; }
+	.partner-logo {
+		width: 80px;
+		height: 80px;
+		margin: 0 auto 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-	.org.tbd { color: var(--color-ink); font-weight: 800; letter-spacing: .06em; }
+	.partner-logo img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	.partner-logo.placeholder {
+		background: var(--color-accent);
+		border-radius: 50%;
+		color: var(--color-ink);
+		font-weight: 800;
+		font-size: 1.2rem;
+	}
+
+	/* Story Section */
+	.story-section {
+		margin: 80px 0;
+		background: var(--section-light);
+		padding: 40px;
+		border-radius: 12px;
+	}
+
+	/* What We Do Section */
+	.what-we-do-section {
+		margin: 80px 0;
+	}
+
+	.service-card {
+		background: white;
+		border-left: 4px solid var(--color-accent);
+		padding: 30px;
+		margin: 30px 0;
+		border-radius: 0 12px 12px 0;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	}
+
+	/* Impact Section */
+	.impact-section {
+		margin: 80px 0;
+		background: var(--section-light);
+		padding: 40px;
+		border-radius: 12px;
+	}
+
+	.impact-stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 30px;
+		margin: 40px 0;
+	}
+
+	.stat {
+		text-align: center;
+	}
+
+	.stat-number {
+		font-size: 2.5rem;
+		font-weight: 800;
+		color: var(--color-hover);
+		margin-bottom: 8px;
+	}
+
+	.stat-label {
+		font-size: 0.9rem;
+		color: var(--color-ink);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.impact-note {
+		text-align: center;
+		font-style: italic;
+		margin-top: 30px;
+		font-size: 0.9rem;
+	}
+
+	/* Goals Section */
+	.goals-section {
+		margin: 80px 0;
+	}
+
+	.goals-list {
+		display: grid;
+		gap: 20px;
+		margin-top: 30px;
+	}
+
+	.goal-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 20px;
+		background: white;
+		padding: 25px;
+		border-radius: 12px;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	}
+
+	.goal-icon {
+		font-size: 2rem;
+		flex-shrink: 0;
+	}
+
+	.goal-item p {
+		margin: 0;
+		font-size: 1.1rem;
+	}
+
+	/* Partners Section */
+	.partners-section {
+		margin: 80px 0;
+		background: var(--section-light);
+		padding: 40px;
+		border-radius: 12px;
+		text-align: center;
+	}
+
+	.partners-intro {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin: 0 0 30px;
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.partners-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 20px;
+		margin-top: 20px;
+	}
+
+	.partner-link {
+		display: inline-block;
+		color: var(--color-brand);
+		text-decoration: underline;
+		font-weight: 500;
+		transition: color 0.2s ease;
+		padding: 5px 0;
+	}
+
+	.partner-link:hover {
+		color: var(--color-hover);
+		text-decoration-thickness: 2px;
+	}
+
+	/* CTA Section */
+	.cta-section {
+		text-align: center;
+		margin: 80px 0 60px;
+	}
 
 	.support-btn {
 		display: inline-block;
-		margin: 28px auto 0;
-		padding: 12px 32px;
+		padding: 16px 40px;
 		border-radius: 999px;
 		text-decoration: none;
-		font-size: 0.8rem;
+		font-size: 1rem;
 		font-family: 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		font-weight: 300;
+		font-weight: 600;
 		color: var(--color-white);
 		background: var(--color-subscribe-dark);
+		transition: all 0.3s ease;
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.page {
+			padding: 0 20px;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		h2 {
+			font-size: 1.8rem;
+		}
+
+		.partners-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.impact-stats {
+			grid-template-columns: 1fr;
+		}
+
+		.story-section,
+		.impact-section {
+			padding: 30px 20px;
+		}
+
+		.service-card,
+		.goal-item {
+			padding: 20px;
+		}
+
+		.partners-section {
+			padding: 30px 20px;
+		}
+
+		.partners-grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>
 
