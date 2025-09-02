@@ -1,48 +1,319 @@
 ---
-import SecondaryPage from '../layouts/SecondaryPage.astro';
-import events from '../data/events.json';
-type EventItem = { dateLine: string; title: string; description: string };
-const list = events as EventItem[];
+import SecondaryPage from "../layouts/SecondaryPage.astro";
+import events from "../data/events.json";
+type EventItem = { 
+  dateLine: string; 
+  title: string; 
+  description: string; 
+  location: string; 
+  locationLink?: string;
+};
+type EventsData = { upcoming: EventItem[]; past: EventItem[] };
+const eventsData = events as EventsData;
 ---
 
-<SecondaryPage title="Upcoming Events">
-	<ul class="event-list">
-		{list.map((e) => (
-			<li class="event">
-				<div class="date">
-					<div>{e.dateLine}</div>
-				</div>
-				<div class="details">
-					<h2 class="event-title">{e.title}</h2>
-					<p class="event-desc">{e.description}</p>
-				</div>
-			</li>
-		))}
-	</ul>
+<SecondaryPage title="Events" heroImage="/src/assets/posing_in_front_of_library.avif">
+   <div class="events-container">
+     <section class="events-section">
+       <h2 class="section-title">Upcoming Events</h2>
+       <ul class="event-list">
+         {
+           eventsData.upcoming.map((e) => (
+             <li class="event">
+               <div class="date">
+                 <div>{e.dateLine}</div>
+               </div>
+               <div class="details">
+                 <h3 class="event-title">{e.title}</h3>
+                 <p class="event-location">
+                   {e.locationLink ? (
+                     <a href={e.locationLink} target="_blank" rel="noopener noreferrer" class="location-link">
+                       {e.location}
+                     </a>
+                   ) : (
+                     `${e.location}`
+                   )}
+                 </p>
+                 <p class="event-desc">{e.description}</p>
+               </div>
+             </li>
+           ))
+         }
+       </ul>
+     </section>
+
+     <section class="events-section past-events-section">
+       <button
+         class="section-toggle"
+         id="past-events-toggle"
+         aria-expanded="false"
+       >
+         <h2 class="section-title past-events-title">Past Events</h2>
+         <span class="toggle-icon" aria-hidden="true">▼</span>
+       </button>
+       <div class="past-events-content" id="past-events-content">
+         <ul class="event-list past-event-list">
+           {
+             eventsData.past.map((e) => (
+               <li class="event past-event">
+                 <div class="date">
+                   <div>{e.dateLine}</div>
+                 </div>
+                 <div class="details">
+                   <h3 class="event-title">{e.title}</h3>
+                   <p class="event-location">
+                     {e.locationLink ? (
+                       <a href={e.locationLink} target="_blank" rel="noopener noreferrer" class="location-link">
+                         {e.location}
+                       </a>
+                     ) : (
+                       `${e.location}`
+                     )}
+                   </p>
+                   <p class="event-desc">{e.description}</p>
+                 </div>
+               </li>
+             ))
+           }
+         </ul>
+       </div>
+     </section>
+   </div>
 </SecondaryPage>
 
 <style>
-	.event-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 36px; }
+  .events-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+	margin-top: 60px;
+  }
 
-	.event { display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: start; }
+  .events-section {
+    margin-bottom: 48px;
+    max-width: 100%;
+  }
+  .events-section:last-child {
+    margin-bottom: 0;
+  }
 
-	.date { color: var(--color-hover); font-weight: 800; max-width: 80px; }
-	.date div + div { margin-top: 4px; }
+  .section-title {
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    font-size: 2em;
+    color: #2c4450;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--color-hover);
+    padding-bottom: 8px;
+  }
 
-	.event-title {
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		font-size: 1.5em;
-		color: #2c4450;
-		margin: 0 0 8px;
-		text-transform: uppercase;
-	}
+  /* Past Events Section Styling */
+  .past-events-section {
+    margin-top: 60px;
+  }
 
-	.event-desc { margin: 0; color: var(--color-hover); max-width: 900px; }
+  .section-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.2s ease;
+  }
 
-	@media (max-width: 720px) {
-		.event { grid-template-columns: 1fr; }
-	}
+  .section-toggle:hover {
+    opacity: 0.8;
+  }
+
+  .past-events-title {
+    font-size: 1.5em !important;
+    color: #6b7280 !important;
+    border-bottom: 1px solid #d1d5db !important;
+    margin: 0 !important;
+    padding-bottom: 8px;
+  }
+
+  .toggle-icon {
+    font-size: 0.8em;
+    color: #6b7280;
+    transition: transform 0.3s ease;
+    margin-left: 16px;
+  }
+
+  .section-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .past-events-content {
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .past-events-content.expanded {
+    max-height: 2000px;
+    opacity: 1;
+  }
+
+  .past-event-list {
+    margin-top: 24px !important;
+  }
+
+  .past-event {
+    opacity: 0.7;
+  }
+
+  .past-event .event-title {
+    color: #6b7280 !important;
+    font-size: 1.3em !important;
+  }
+
+  .past-event .event-location {
+    color: #9ca3af !important;
+  }
+
+  .past-event .location-link {
+    color: #9ca3af !important;
+  }
+
+  .past-event .location-link:hover {
+    color: #6b7280 !important;
+  }
+
+  .past-event .event-desc {
+    color: #9ca3af !important;
+  }
+
+  .past-event .date {
+    color: #9ca3af !important;
+  }
+
+  .event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 36px;
+  }
+
+  .event {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .date {
+    color: var(--color-hover);
+    font-weight: 800;
+    max-width: 80px;
+  }
+  .date div + div {
+    margin-top: 4px;
+  }
+
+  .event-title {
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    font-size: 1.5em;
+    color: #2c4450;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+
+  .event-location {
+    margin: 0 0 12px;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .location-link {
+    color: #4a5568;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .location-link:hover {
+    color: #2c4450;
+    text-decoration: underline;
+  }
+
+  .event-desc {
+    margin: 0;
+    color: var(--color-hover);
+    max-width: 900px;
+  }
+
+  @media (max-width: 720px) {
+    .events-container {
+      padding: 0 16px;
+    }
+    
+    .event {
+      grid-template-columns: 1fr;
+    }
+    .section-title {
+      font-size: 1.5em;
+    }
+    .past-events-title {
+      font-size: 1.2em !important;
+    }
+  }
 </style>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("past-events-toggle");
+    const content = document.getElementById("past-events-content");
 
+    if (toggleButton && content) {
+      toggleButton.addEventListener("click", function () {
+        const isExpanded =
+          toggleButton.getAttribute("aria-expanded") === "true";
 
+        if (isExpanded) {
+          // Collapse
+          content.classList.remove("expanded");
+          toggleButton.setAttribute("aria-expanded", "false");
+        } else {
+          // Expand
+          content.classList.add("expanded");
+          toggleButton.setAttribute("aria-expanded", "true");
+        }
+      });
+    }
+  });
+</script>

@@ -1,18 +1,55 @@
-[
-  {
-    "dateLine": "June 7, 2025",
-    "title": "Winchester, MA Town Day",
-    "description": "We will have a booth with locally-made knitted items, tote bags, art activities, and more information about our project."
-  },
-  {
-    "dateLine": "June 20, 2025",
-    "title": "World Refugee Day",
-    "description": "Our team will be attending events in Uganda and spreading awareness about our library project."
-  },
-  {
-    "dateLine": "June 2025 - Oct 2025",
-    "title": "Winchester, MA Farmer's Market",
-    "description": "We will be at the community booth once a month with merchandise, activities, and information, dates TBD."
-  }
-]
+{
+  "upcoming": [
+    {
+      "dateLine": "June 2025 - Oct 2025",
+      "title": "Winchester, MA Farmer's Market",
+      "description": "We will be at the community booth once a month with merchandise, activities, and information, dates TBD.",
+      "location": "Winchester Center, Winchester, MA",
+      "locationLink": "https://maps.google.com/?q=Winchester+Center+Winchester+MA"
+    },
+    {
+      "dateLine": "Oct 3, 2025 6PM",
+      "title": "Art Pen Pals Showcase 1",
+      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the MIT Welcome Center!",
+      "location": "MIT Welcome Center, Cambridge, MA",
+      "locationLink": "https://maps.google.com/?q=MIT+Welcome+Center+Cambridge+MA"
+    },
+    {
+      "dateLine": "Oct 11, 2025 9:30AM - 1:30pm",
+      "title": "Art Pen Pals Showcase 2",
+      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the Winchester Farmer's Market!",
+      "location": "Winchester Town Center, Winchester, MA",
+      "locationLink": "https://maps.google.com/?q=Winchester+Town+Center+Winchester+MA"
+    },
+    {
+      "dateLine": "Nov 9, 2025 3PM",
+      "title": "Art Pen Pals Showcase 3",
+      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the Griffin Museum of Photography!",
+      "location": "Griffin Museum, Winchester, MA",
+      "locationLink": "https://maps.google.com/?q=Griffin+Museum+Winchester+MA"
+    },
+    {
+      "dateLine": "Nov 22, 2025",
+      "title": "Art Pen Pals Showcase 4",
+      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at Winchester Open Studios!",
+      "location": "Winchester Open Studios",
+      "locationLink": "https://winchesterculturaldistrict.org/winchester-open-studios.html"
+    }
+  ],
+  "past": [
+    {
+      "dateLine": "June 20, 2025",
+      "title": "World Refugee Day",
+      "description": "Our team will be attending events in Uganda and spreading awareness about our library project.",
+      "location": "Uganda"
+    },
+    {
+      "dateLine": "June 7, 2025",
+      "title": "Winchester, MA Town Day",
+      "description": "We will have a booth with locally-made knitted items, tote bags, art activities, and more information about our project.",
+      "location": "Winchester Town Center, Winchester, MA",
+      "locationLink": "https://maps.google.com/?q=Winchester+Town+Center+Winchester+MA"
+    }
+  ]
+}
 
