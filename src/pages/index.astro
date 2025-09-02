@@ -5,6 +5,10 @@ import libraryGroupImg from '../assets/library_group.avif';
 import groupEventsImg from '../assets/group_event.avif';
 import groupStudyImg from '../assets/group_study.avif';
 import headphonesFunImg from '../assets/headphones_fun.avif';
+import imvepiMapImg from '../assets/imvepi_map.avif';
+import rhinoMapImg from '../assets/rhino_map.avif';
+import imvepiSetupImg from '../assets/imvepi_setup.avif';
+import rhinoSetupImg from '../assets/rhino_setup.avif';
 import ActivitiesCarousel from '../components/ActivitiesCarousel.astro';
 import { activities } from '../data/site.js';
 ---
@@ -41,7 +45,7 @@ import { activities } from '../data/site.js';
 			
 			<div class="text-column">
 				<h3>Support Us</h3>
-				<p>Our libraries and activities are entirely crowd-funded. We have already reached 800+ people and transported 1,500+ books. With your help, we can continue to provide educational resources and creative activities for these communities.</p>
+				<p>Our libraries and activities are entirely crowd-funded. We have already reached 800+ people and circulated 2,000+ books. With your help, we can continue to provide educational resources and creative activities for these communities.</p>
 				<br/>
 				<a href="/support-us" class="learn-more-btn">Learn How You Can Help →</a>
 			</div>
@@ -58,6 +62,34 @@ import { activities } from '../data/site.js';
 				"We don't want this generation of South Sudanese, Congolese, or Ugandans to miss the opportunity of education"
 			</blockquote>
 			<cite>- Peter Hardrock (CLH Imvepi Team Lead)</cite>
+		</div>
+	</section>
+
+	<section class="where-we-work-section">
+		<div class="where-we-work-container">
+			<div class="image-pairs-container">
+				<div class="image-pair">
+					<div class="large-circle">
+						<img src={imvepiSetupImg.src} alt="Imvepi Refugee Settlement" />
+					</div>
+					<div class="small-circle small-circle-top-left">
+						<img src={imvepiMapImg.src} alt="Library in Imvepi" />
+					</div>
+				</div>
+				<div class="image-pair">
+					<div class="large-circle">
+						<img src={rhinoSetupImg.src} alt="Rhino Refugee Settlement" />
+					</div>
+					<div class="small-circle small-circle-top-right">
+						<img src={rhinoMapImg.src} alt="Community in Rhino" />
+					</div>
+				</div>
+			</div>
+			<div class="where-we-work-text">
+				<h2>Where We Work</h2>
+				<p>Today, Creative Learning Haven has library branches in Uganda's Rhino and Imvepi refugee settlements. Rhino was established in 1980 to support people fleeing the South Sudanese civil war into Uganda. Imvepi was established in 2017 for the same reason. As of 2021, both settlements serve a combined population of 194,000+ refugees. 95% of visitors to CLH are South Sudanese.</p>
+				<a href="/about" class="learn-more-btn">Learn More About Our Story →</a>
+			</div>
 		</div>
 	</section>
 
@@ -609,7 +641,7 @@ import { activities } from '../data/site.js';
 		text-align: left;
 		padding: 40px 16px;
 		margin-top: 80px;
-		margin-bottom: 80px;
+		margin-bottom: 0;
 		z-index: 0;
 	}
 
@@ -842,6 +874,154 @@ import { activities } from '../data/site.js';
 		.newsletter-button {
 			padding: 10px 16px;
 			width: 100%;
+		}
+	}
+
+	/* Where We Work Section Styles */
+	.where-we-work-section {
+		padding: 80px 16px 80px 16px;
+		background: var(--section-light);
+		margin-top: 0;
+	}
+
+	.where-we-work-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 80px;
+		align-items: center;
+	}
+
+	.image-pairs-container {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		align-items: center;
+	}
+
+	.image-pair:first-child {
+		align-self: flex-start;
+		margin-left: 40px;
+	}
+
+	.image-pair:last-child {
+		align-self: flex-end;
+		margin-right: 40px;
+	}
+
+	.image-pair {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.large-circle {
+		width: 350px;
+		height: 350px;
+		border-radius: 50%;
+		overflow: hidden;
+		position: relative;
+		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+	}
+
+	.large-circle img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.small-circle {
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		overflow: hidden;
+		position: absolute;
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+		border: 4px solid white;
+	}
+
+	.small-circle img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.small-circle-top-left {
+		top: -70px;
+		left: -70px;
+	}
+
+	.small-circle-top-right {
+		top: -70px;
+		right: -70px;
+	}
+
+	.where-we-work-text {
+		padding-left: 20px;
+	}
+
+	.where-we-work-text h2 {
+		font-size: 32px;
+		color: var(--color-subscribe-dark);
+		margin-bottom: 20px;
+		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		text-transform: uppercase;
+		text-align: left;
+	}
+
+	.where-we-work-text p {
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--color-text);
+		margin: 0;
+		text-align: left;
+	}
+
+	@media (max-width: 768px) {
+		.where-we-work-section {
+			padding: 60px 16px;
+		}
+
+		.where-we-work-container {
+			grid-template-columns: 1fr;
+			gap: 60px;
+		}
+
+		.image-pairs-container {
+			gap: 30px;
+		}
+
+		.large-circle {
+			width: 280px;
+			height: 280px;
+		}
+
+		.small-circle {
+			width: 160px;
+			height: 160px;
+		}
+
+		.image-pair:first-child {
+			margin-left: 0;
+		}
+
+		.image-pair:last-child {
+			margin-right: 0;
+		}
+
+		.where-we-work-text {
+			padding-left: 0;
+			text-align: center;
+		}
+
+		.where-we-work-text h2 {
+			font-size: 28px;
+			text-align: center;
+		}
+
+		.where-we-work-text p {
+			text-align: center;
 		}
 	}
 </style>
