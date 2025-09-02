@@ -59,7 +59,7 @@ export const siteData = {
     {
       image: paintingOfWomanImg,
       heading: "Art Pen Pals",
-      text: "Students in Winchester, MA are paired with students in Imvepi Refugee Camp to exchange pen pal emails and art they create in response to shared prompts."
+      text: `Students in Winchester, MA are paired with students in Imvepi Refugee Camp to exchange pen pal emails and art they create in response to shared prompts. We have showcases of our pen pals' work coming up this fall. Check out our <a href="/events">events page</a> for more details!`
     }
   ],
 };
