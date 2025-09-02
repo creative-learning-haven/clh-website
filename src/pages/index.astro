@@ -1,9 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import heroImg from '../assets/P1090543.jpg';
+import heroImg from '../assets/reading.avif';//'../assets/P1090543.jpg';
 import libraryGroupImg from '../assets/library_group.avif';
-import groupPhotoImg from '../assets/group_photo.avif';
+import groupEventsImg from '../assets/group_event.avif';
 import groupStudyImg from '../assets/group_study.avif';
+import headphonesFunImg from '../assets/headphones_fun.avif';
 import ActivitiesCarousel from '../components/ActivitiesCarousel.astro';
 import { activities } from '../data/site.js';
 ---
@@ -25,7 +26,7 @@ import { activities } from '../data/site.js';
 			<h1>
 				<span>Knowledge is Peace</span>
 			</h1>
-			<p class="tagline">Building libraries to create a brighter future for members of Uganda's refugee settlements</p>
+			<p class="tagline">Community-run libraries for brighter futures in Uganda's refugee settlements</p>
 		</div>
 	</section>
 
@@ -67,13 +68,13 @@ import { activities } from '../data/site.js';
 			<a href="/events" class="learn-more-btn">Learn More →</a>
 		</div>
 		<div class="content-image">
-			<img src={groupPhotoImg.src} alt="Community members gathered together" />
+			<img src={groupEventsImg.src} alt="Community members gathered together" />
 		</div>
 	</section>
 
 	<section class="content-row content-row-reverse">
 		<div class="content-image">
-			<img src={groupStudyImg.src} alt="Students studying together in the library" />
+			<img src={headphonesFunImg.src} alt="Students studying together in the library" />
 		</div>
 		<div class="content-text">
 			<h2>Socials</h2>
@@ -137,7 +138,7 @@ import { activities } from '../data/site.js';
 <style>
 	.hero {
 		position: relative;
-		min-height: 40vh;
+		min-height: 60vh;
 		color: white;
 		display: grid;
 		place-items: center;
@@ -154,7 +155,7 @@ import { activities } from '../data/site.js';
 		bottom: 0;
 		background-image: var(--hero-image);
 		background-size: cover;
-		background-position: center center;
+		background-position: top center;
 		background-repeat: no-repeat;
 		z-index: -2;
 	}
@@ -275,13 +276,14 @@ import { activities } from '../data/site.js';
 
 	.tagline {
 		display: inline-block;
-		font-size: 1.2em;
+		font-size: 1.4em;
 		max-width: 1400px;
 		padding: 8px 14px;
 		margin-top: 60px;
 		border-radius: 10px;
 		letter-spacing: .08em;
 		font-weight: 800; // uses Avenir Heavy
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 	}
 
 	h1 {
@@ -290,6 +292,7 @@ import { activities } from '../data/site.js';
 		font-size: 50px;
 		line-height: 0.95;
 		text-transform: uppercase;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 	}
 
 	.line2 { display: block; font-size: 1.1em; }
