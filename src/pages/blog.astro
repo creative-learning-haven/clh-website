@@ -1,12 +1,91 @@
 ---
-import SecondaryPage from '../layouts/SecondaryPage.astro';
+import SecondaryPage from "../layouts/SecondaryPage.astro";
 ---
-<SecondaryPage title="Blog">
-	<p class="blog-desc">Stay tuned for updates on our project!</p>
+
+<SecondaryPage title="Blog" heroImage="/src/assets/landscape.avif">
+  <behold-widget feed-id="r0somW3MsMS6td8wtek1"></behold-widget>
+  <script>
+    (() => {
+      const d = document,
+        s = d.createElement("script");
+      s.type = "module";
+      s.src = "https://w.behold.so/widget.js";
+      d.head.append(s);
+    })();
+  </script>
+  
+  <div class="social-section">
+    <p class="social-text">Follow us on our socials for more!</p>
+    <div class="social-icons">
+      <a href="#" class="social-link">
+        <img src="/src/assets/instagram_icon.svg" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="#" class="social-link">
+        <img src="/src/assets/facebook_icon.svg" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="#" class="social-link">
+        <img src="/src/assets/youtube_icon.svg" alt="YouTube" class="social-icon" />
+      </a>
+    </div>
+  </div>
 </SecondaryPage>
 
 <style>
-	.blog-desc { text-align: center; max-width: 900px; }
+  .blog-desc {
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .social-section {
+    text-align: center;
+    margin: 40px 0;
+    padding: 20px;
+  }
+
+  behold-widget {
+    margin-top: 60px;
+  }
+
+  .social-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .social-link {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .social-link:hover {
+    transform: scale(1.1);
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0);
+  }
+
+  .social-icon:hover {
+    filter: brightness(0) opacity(0.7);
+  }
+
+  @media (max-width: 768px) {
+    .social-icons {
+      gap: 15px;
+    }
+    
+    .social-icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
 </style>
-
-
