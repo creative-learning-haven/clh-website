@@ -18,10 +18,15 @@ import SecondaryPage from "../layouts/SecondaryPage.astro";
   <div class="hero">
     <!-- <h1>About Us</h1> -->
     <p class="hero-text">
-      Creative Learning Haven (CLH) creates and runs community libraries in the
+      Founded in January 2025, Creative Learning Haven (CLH) creates and runs community libraries in the
       Imvepi and Rhino refugee settlements in Uganda by partnering with local,
       refugee-led organizations. These are the first spaces of their kind in the
       camps, offering free access to books, learning, and creativity.
+    </p>
+    <p class="hero-text">
+      <a href="https://drive.google.com/file/d/17DaR4RNnVCsTtgkOWpnSk9YRdxAihRBv/view?usp=sharing" class="progress-report-link" target="_blank" rel="noopener noreferrer">
+        <strong>Check out our latest progress report →</strong>
+      </a>
     </p>
   </div>
 
@@ -42,7 +47,7 @@ import SecondaryPage from "../layouts/SecondaryPage.astro";
           and Imvepi refugee settlements. Rhino was established in 1980 to
           support people fleeing the South Sudanese civil war into Uganda.
           Imvepi was established in 2017 for the same reason. As of 2021, both
-          settlements serve a combined population of 194,000+ refugees. Most of
+          settlements serve a combined population of 200,000+ refugees. Most of
           the refugees have lived in the settlements for over 8 years, primarily
           due to conflicts in South Sudan and the Democratic Republic of the
           Congo (DRC). People from these countries have a history of forced
@@ -318,6 +323,18 @@ import SecondaryPage from "../layouts/SecondaryPage.astro";
     max-width: 700px;
     margin: 0 auto;
     color: var(--color-ink);
+  }
+
+  .progress-report-link {
+    color: var(--color-brand);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .progress-report-link:hover {
+    color: var(--color-hover);
+    text-decoration-thickness: 2px;
   }
 
   h2 {
