@@ -87,7 +87,7 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 	}
 
-	.brand:hover { color: #D55342; }
+	.brand:hover { color: var(--color-dark-brown); }
 
 	.main-nav {
 		display: flex;
@@ -107,15 +107,15 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 		transition: color .15s ease, opacity .15s ease;
 	}
 
-	.main-nav a:hover { opacity: 1; color: #D55342; }
-	.main-nav a.active { color: #D55342; opacity: 1; }
+	.main-nav a:hover { opacity: 1; color: var(--color-dark-brown); }
+	.main-nav a.active { color: var(--color-dark-brown); opacity: 1; }
 
 	.donate-col {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: var(--color-donate);
-		color: #0b2d1f;
+		background: var(--color-yellow);
+		color: var(--color-dark-green);
 		text-decoration: none;
 		font-weight: 900;
 		letter-spacing: .08em;
@@ -223,15 +223,15 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 
 	.mobile-nav a:hover,
 	.mobile-nav a.active {
-		color: #D55342;
+		color: var(--color-dark-brown);
 	}
 
 	.mobile-donate {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: var(--color-donate);
-		color: #0b2d1f;
+		background: var(--color-yellow);
+		color: var(--color-dark-green);
 		text-decoration: none;
 		font-weight: 900;
 		letter-spacing: .08em;

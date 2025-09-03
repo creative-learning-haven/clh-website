@@ -29,12 +29,38 @@
 	font-display: swap;
 }
 
+
 :root {
+
+	/* FROM META PAINTING COLORS*/
+	--meta-green-blue: #0068C4ff;
+	--meta-ruddy-blue: #69ABE0ff;
+	--meta-apple-green: #AAB82Eff;
+	--meta-forest-green: #41871Bff;
+	--meta-pakistan-green: #0B360Fff;
+	/*  */
+
+	--color-light-blue: #BBDEF0;
+	/* 	--color-sea-green: #adb768; */
+	--color-sea-green: #adb768;
+
+	--color-light-brown: #b25611;
+
 	--color-orange: #d79b4f;
+
+
+	--color-dark-yellow: #f8bc02;
+
+	--color-yellow: #ffd24d; /* bright yellow for donate and socials */
+
+
+	--color-dark-brown: #763c01;
+
+	--color-orange-2: #ef8536;
+
 	--color-accent: #8fe0c4;
 	--color-ink: #162126;
 	--section-light: #e8e8e8;
-	--color-hover: #D55342;
 
 	--color-white: #ffffff;
 	--white-strong: rgba(255,255,255,0.98);
@@ -51,12 +77,13 @@
 	--color-teal-ink: #083c2f;
 
 	--color-dark-green: #17323b;
+	/* --color-dark-green:#C65B7C; */
 	--color-subscribe-input-border: #2d4a53;
 	--color-subscribe-input-bg: #0f272f;
 	--color-subscribe-input-text: #e6fffb;
 	--color-subscribe-foreground: #d6efe7;
 
-	--color-donate-hover: #ffe27a;
+	--color-light-yellow: #ffe27a;
 }
 
 * { box-sizing: border-box; }
@@ -86,9 +113,8 @@ a { color: inherit; }
 .recolor-on-hover { transition: background .2s ease, color .2s ease, border-color .2s ease; }
 .recolor-on-hover:hover,
 .recolor-on-hover:focus-visible {
-	background: var(--color-hover) !important;
-	color: #ffffff !important;
-	border-color: var(--color-hover) !important;
+	background: var(--color-light-yellow) !important;
+	border-color: var(--color-light-yellow) !important;
 }
 
 
