@@ -21,7 +21,31 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 		</div>
 	</div>
 	<a class="donate-col recolor-on-hover" href="/support-us">DONATE</a>
+	
+	<!-- Mobile hamburger button -->
+	<button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+		<span class="hamburger-line"></span>
+		<span class="hamburger-line"></span>
+		<span class="hamburger-line"></span>
+	</button>
 </header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+	<div class="mobile-menu">
+		<nav class="mobile-nav" aria-label="Mobile navigation">
+			{navigation.main.map(item => (
+				<a 
+					href={item.href} 
+					class={currentPath === item.href || (item.href !== "/" && currentPath.startsWith(item.href)) ? "active" : ""}
+				>
+					{item.title}
+				</a>
+			))}
+		</nav>
+		<a class="mobile-donate" href="/support-us">DONATE</a>
+	</div>
+</div>
 
 <style>
 	.site-header {
@@ -105,12 +129,202 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 		font-size: 0.8em;
 	}
 
+	/* Hamburger button styles */
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 30px;
+		height: 30px;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		z-index: 1001;
+	}
+
+	.hamburger-line {
+		width: 25px;
+		height: 3px;
+		background: white;
+		transition: all 0.3s ease;
+		transform-origin: center;
+	}
+
+	.hamburger.active .hamburger-line:nth-child(1) {
+		transform: rotate(45deg) translate(7px, 7px);
+	}
+
+	.hamburger.active .hamburger-line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active .hamburger-line:nth-child(3) {
+		transform: rotate(-45deg) translate(7px, -7px);
+	}
+
+	/* Mobile menu overlay */
+	.mobile-menu-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0);
+		z-index: 999;
+		transition: background 0.3s ease;
+		display: none;
+		pointer-events: none;
+	}
+
+	.mobile-menu-overlay.active {
+		background: rgba(0, 0, 0, 0.5);
+		pointer-events: auto;
+	}
+
+	.mobile-menu {
+		position: absolute;
+		top: 0;
+		right: -280px;
+		width: 280px;
+		height: 100vh;
+		background: var(--color-brand);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 80px 20px 20px;
+		box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+		transition: right 0.3s ease;
+	}
+
+	.mobile-menu-overlay.active .mobile-menu {
+		right: 0;
+	}
+
+	.mobile-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		width: 100%;
+		margin-bottom: 40px;
+	}
+
+	.mobile-nav a {
+		color: white;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 1.1em;
+		padding: 12px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		transition: color 0.15s ease;
+	}
+
+	.mobile-nav a:hover,
+	.mobile-nav a.active {
+		color: #D55342;
+	}
+
+	.mobile-donate {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-donate);
+		color: #0b2d1f;
+		text-decoration: none;
+		font-weight: 900;
+		letter-spacing: .08em;
+		text-transform: uppercase;
+		padding: 16px 24px;
+		border-radius: 4px;
+		box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
+		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+		font-size: 0.9em;
+		width: 100%;
+		transition: transform 0.15s ease;
+	}
+
+	.mobile-donate:hover {
+		transform: translateY(-1px);
+	}
+
 	@media (max-width: 720px) {
-		.site-header { grid-template-columns: 1fr; }
-		.container { gap: 12px; }
-		.main-nav { justify-content: center;}
-		.donate-col { width: 100%; text-align: center; padding: 12px; }
+		.site-header { 
+			grid-template-columns: 1fr auto; 
+		}
+		
+		.container { 
+			gap: 12px; 
+			padding: 10px 16px;
+		}
+		
+		.main-nav { 
+			display: none; 
+		}
+		
+		.donate-col { 
+			display: none; 
+		}
+
+		.hamburger {
+			display: flex;
+			margin-right: 16px;
+		}
+
+		.mobile-menu-overlay {
+			display: block;
+		}
 	}
 </style>
 
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const hamburger = document.getElementById('hamburger');
+		const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+		const body = document.body;
+
+		if (hamburger && mobileMenuOverlay) {
+			hamburger.addEventListener('click', function() {
+				// Toggle active states
+				hamburger.classList.toggle('active');
+				mobileMenuOverlay.classList.toggle('active');
+				
+				// Prevent body scroll when menu is open
+				if (mobileMenuOverlay.classList.contains('active')) {
+					body.style.overflow = 'hidden';
+				} else {
+					body.style.overflow = '';
+				}
+			});
+
+			// Close menu when clicking on overlay (outside the menu)
+			mobileMenuOverlay.addEventListener('click', function(e) {
+				if (e.target === mobileMenuOverlay) {
+					hamburger.classList.remove('active');
+					mobileMenuOverlay.classList.remove('active');
+					body.style.overflow = '';
+				}
+			});
+
+			// Close menu when clicking on navigation links
+			const mobileNavLinks = mobileMenuOverlay.querySelectorAll('.mobile-nav a, .mobile-donate');
+			mobileNavLinks.forEach(link => {
+				link.addEventListener('click', function() {
+					hamburger.classList.remove('active');
+					mobileMenuOverlay.classList.remove('active');
+					body.style.overflow = '';
+				});
+			});
+
+			// Close menu on escape key
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+					hamburger.classList.remove('active');
+					mobileMenuOverlay.classList.remove('active');
+					body.style.overflow = '';
+				}
+			});
+		}
+	});
+</script>
 
