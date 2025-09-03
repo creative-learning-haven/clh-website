@@ -176,6 +176,8 @@ import { activities } from '../data/site.js';
 		/* max-width: 940px; */
 		padding: 4vh 16px 5vh;
 		text-align: center;
+		max-width: 90vw;
+		margin: 0 auto;
 	}
 
 	/* Staggered rise-in animation for hero content (slower + stronger) */
@@ -196,6 +198,31 @@ import { activities } from '../data/site.js';
 
 	@media (prefers-reduced-motion: reduce) {
 		.hero-inner > * { animation: none; opacity: 1; transform: none; filter: none; }
+	}
+
+	/* Mobile-specific hero adjustments */
+	@media (max-width: 768px) {
+		.hero-inner {
+			padding: 6vh 20px 8vh;
+			max-width: 95vw;
+		}
+		
+		.tagline {
+			margin-top: 40px;
+			padding: 6px 12px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-inner {
+			padding: 8vh 16px 10vh;
+		}
+		
+		.tagline {
+			margin-top: 30px;
+			padding: 4px 10px;
+			font-size: clamp(1em, 4vw, 1.2em);
+		}
 	}
 
 	/* Cards Section Styles */
@@ -277,8 +304,8 @@ import { activities } from '../data/site.js';
 
 	.tagline {
 		display: inline-block;
-		font-size: 1.4em;
-		max-width: 1400px;
+		font-size: clamp(1.1em, 3.5vw, 1.4em);
+		max-width: min(90vw, 800px);
 		padding: 8px 14px;
 		margin-top: 60px;
 		border-radius: 10px;
@@ -289,8 +316,7 @@ import { activities } from '../data/site.js';
 
 	h1 {
 		margin: 10px 0 6px;
-		/* font-size: clamp(34px, 7vw, 76px); */
-		font-size: 50px;
+		font-size: clamp(28px, 8vw, 50px);
 		line-height: 0.95;
 		text-transform: uppercase;
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
