@@ -75,9 +75,20 @@ const { activities } = Astro.props;
       this.nextBtn = document.getElementById('carousel-next');
       this.currentIndex = 0;
       this.totalItems = this.track?.children.length || 0;
-      this.visibleItems = 3;
+      this.visibleItems = this.getVisibleItems();
       
       this.init();
+    }
+    
+    getVisibleItems(): number {
+      const width = window.innerWidth;
+      if (width <= 768) {
+        return 1; // Mobile: 1 item visible
+      } else if (width <= 1024) {
+        return 2; // Tablet: 2 items visible
+      } else {
+        return 3; // Desktop: 3 items visible
+      }
     }
     
     init() {
@@ -85,6 +96,18 @@ const { activities } = Astro.props;
       
       this.prevBtn.addEventListener('click', () => this.navigate(-1));
       this.nextBtn.addEventListener('click', () => this.navigate(1));
+      
+      // Add resize listener to recalculate visible items
+      window.addEventListener('resize', () => {
+        const newVisibleItems = this.getVisibleItems();
+        if (newVisibleItems !== this.visibleItems) {
+          this.visibleItems = newVisibleItems;
+          // Reset to first position when screen size changes
+          this.currentIndex = 0;
+          this.updateTrackPosition();
+          this.updateNavigation();
+        }
+      });
       
       // Set initial state
       this.updateNavigation();
@@ -94,10 +117,13 @@ const { activities } = Astro.props;
     navigate(direction: number) {
       this.currentIndex += direction;
       
+      // Ensure we don't go beyond valid range
+      const maxIndex = Math.max(0, this.totalItems - this.visibleItems);
+      
       // Handle wrap-around
       if (this.currentIndex < 0) {
-        this.currentIndex = this.totalItems - this.visibleItems;
-      } else if (this.currentIndex > this.totalItems - this.visibleItems) {
+        this.currentIndex = maxIndex;
+      } else if (this.currentIndex > maxIndex) {
         this.currentIndex = 0;
       }
       
@@ -113,8 +139,9 @@ const { activities } = Astro.props;
     
     updateNavigation() {
       // Show/hide navigation buttons based on position
+      const maxIndex = Math.max(0, this.totalItems - this.visibleItems);
       this.prevBtn!.style.opacity = this.currentIndex === 0 ? '0.5' : '1';
-      this.nextBtn!.style.opacity = this.currentIndex >= this.totalItems - this.visibleItems ? '0.5' : '1';
+      this.nextBtn!.style.opacity = this.currentIndex >= maxIndex ? '0.5' : '1';
     }
   }
   
