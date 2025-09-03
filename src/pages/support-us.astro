@@ -44,7 +44,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
         <!-- First Row: Why Libraries Matter + Image -->
         <div class="row">
           <div class="text-content">
-            <h3 class="section-title">
+            <h3 class="section-title-light">
               Why Are Libraries Essential for Refugees?
             </h3>
             <p class="card-text">
@@ -76,7 +76,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
             />
           </div>
           <div class="text-content">
-            <h3 class="section-title">Our Goals</h3>
+            <h3 class="section-title-light">Our Goals</h3>
             <ul class="goals-list">
               <li>
                 Guarantee that learning continues despite challenges with formal
@@ -196,8 +196,8 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
         <h3 class="section-title">Our Partners</h3>
         <p class="partners-description">
           CLH is implemented by Hope Rising South Sudan (HoRiSS), Youth Social
-          Advocacy Team (YSAT) Uganda, and Lulu Tian, with the support
-          of Hope Foundation Uganda and UNHCR (UN Refugee Agency).
+          Advocacy Team (YSAT) Uganda, and Lulu Tian, with the support of Hope
+          Foundation Uganda and UNHCR (UN Refugee Agency).
         </p>
         <p class="partners-note">
           Creative Learning Haven (CLH) started in January 2025
@@ -208,21 +208,25 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
 
     <!-- Floating Payment Options Box -->
     <div class="payment-box">
-      <h3 class="section-title">Support Our Libraries</h3>
+      <h3 class="section-title-green">Support Our Libraries</h3>
 
       <!-- Donate Section -->
       <div class="donate-section">
         <h4 class="donate-title">Donate Now</h4>
-        <p>CLH is 100% crowdfunded! If you are able, please donate using one of the options below. All funds go directly to running our libraries and activities.</p>
+        <p>
+          CLH is 100% crowdfunded! If you are able, please donate using one of
+          the options below. All funds go directly to running our libraries and
+          activities.
+        </p>
         <div class="donation-options">
-			<div class="donation-option">
-				<h5 class="option-name">Venmo</h5>
-				<p class="option-status">@Lulu-Tian</p>
-			  </div>
-			  <div class="donation-option">
-				<h5 class="option-name">Zelle</h5>
-				<p class="option-status">+1 (781) 999-0704</p>
-			  </div>
+          <div class="donation-option">
+            <h5 class="option-name">Venmo</h5>
+            <p class="option-status">@Lulu-Tian</p>
+          </div>
+          <div class="donation-option">
+            <h5 class="option-name">Zelle</h5>
+            <p class="option-status">+1 (781) 999-0704</p>
+          </div>
           <div
             class="gfm-embed"
             data-url="https://www.gofundme.com/f/uganda-refugee-library-project/widget/medium?sharesheet=undefined&attribution_id=sl:9a7fb96f-62ae-428c-a006-b488bb0cb92d"
@@ -231,7 +235,9 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
           ></script>
         </div>
         <p class="donate-note">
-          Contributions via Venmo and Zelle are also reflected in the GoFundMe widget above. Please <a href="/contact">contact us</a> if you have any questions or want to donate a different way. 
+          Contributions via Venmo and Zelle are also reflected in the GoFundMe
+          widget above. Please <a href="/contact">contact us</a> if you have any
+          questions or want to donate a different way.
         </p>
       </div>
     </div>
@@ -254,14 +260,29 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .section-title {
-    color: #2c5aa0;
+    color: var(--color-dark-brown);
+    margin-bottom: 1rem;
+  }
+
+  .section-title-light {
+    color: var(--color-light-brown);
+    margin-bottom: 1rem;
+  }
+
+  .section-title-green {
+    color: var(--color-dark-green);
     margin-bottom: 1rem;
   }
 
   .impact-overview {
-    background: linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-light-yellow) 0%,
+      var(--color-yellow) 100%
+    );
     padding: 2rem;
     margin-bottom: 2rem;
+    border-radius: 12px;
   }
 
   .impact-description {
@@ -280,10 +301,11 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     background: white;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
   }
 
   .stat-number {
-    color: #2c5aa0;
+    color: var(--color-dark-brown);
     margin: 0;
   }
 
@@ -330,6 +352,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     max-width: 100%;
     height: auto;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
   }
 
   .info-card {
@@ -341,19 +364,27 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   .card-text {
     margin: 0;
     line-height: 1.6;
+    font-size: 1rem;
+    color: var(--color-dark-brown);
   }
 
   .goals-list {
     margin: 0;
     padding-left: 1.5rem;
     line-height: 1.6;
+    color: var(--color-dark-brown);
   }
 
   .fundraising-goal {
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-dark-brown) 0%,
+      var(--color-light-brown) 100%
+    );
     color: white;
     padding: 2rem;
     margin-bottom: 2rem;
+    border-radius: 12px;
   }
 
   .goal-amount {
@@ -379,30 +410,31 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
 
   .impact-card {
     padding: 1.5rem;
+    border-radius: 8px;
   }
 
   .impact-card-yellow {
-    background: #fff3cd;
+    background: var(--color-light-yellow);
   }
 
   .impact-card-blue {
-    background: #d1ecf1;
+    background: var(--color-orange);
   }
 
   .impact-card-green {
-    background: #d4edda;
+    background: var(--color-orange-2);
   }
 
   .impact-card-red {
-    background: #f8d7da;
+    background: var(--color-dark-yellow);
   }
 
   .impact-card-gray {
-    background: #e2e3e5;
+    background: var(--color-light-brown);
   }
 
   .impact-card-light-blue {
-    background: #cce5ff;
+    background: var(--color-yellow);
   }
 
   .impact-amount {
@@ -410,38 +442,42 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .impact-card-yellow .impact-amount {
-    color: #856404;
+    color: var(--color-dark-brown);
   }
 
   .impact-card-blue .impact-amount {
-    color: #0c5460;
+    color: var(--color-dark-brown);
   }
 
   .impact-card-green .impact-amount {
-    color: #155724;
+    color: var(--color-dark-brown);
   }
 
   .impact-card-red .impact-amount {
-    color: #721c24;
+    color: var(--color-dark-brown);
   }
 
   .impact-card-gray .impact-amount {
-    color: #495057;
+    color: white;
   }
 
   .impact-card-light-blue .impact-amount {
-    color: #004085;
+    color: var(--color-dark-brown);
   }
 
   .impact-description {
     margin: 0;
-    font-size: 0.9rem;
+  }
+
+  .impact-overview p {
+    font-size: 1rem;
   }
 
   .donations-support {
-    background: #f8f9fa;
+    background: var(--color-light-yellow);
     padding: 2rem;
     margin-bottom: 2rem;
+    border-radius: 12px;
   }
 
   .support-grid {
@@ -455,7 +491,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .support-title {
-    color: #2c5aa0;
+    color: var(--color-dark-brown);
     margin: 0 0 0.5rem 0;
   }
 
@@ -467,6 +503,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   .quote-card {
     padding: 2rem;
     margin-bottom: 2rem;
+    border-radius: 12px;
   }
 
   .quote-card-yellow {
@@ -474,7 +511,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .quote-card-blue {
-    background: #d1ecf1;
+    background: var(--color-orange-2);
   }
 
   .quote {
@@ -500,7 +537,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   .message-title {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #2c5aa0;
+    color: var(--color-dark-brown);
     margin-bottom: 1rem;
   }
 
@@ -509,9 +546,10 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .partners-section {
-    background: #f8f9fa;
+    background: var(--color-orange);
     padding: 2rem;
     text-align: center;
+    border-radius: 12px;
   }
 
   .partners-description {
@@ -529,9 +567,10 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     top: 6rem;
     height: fit-content;
     background: white;
-    border: 2px solid #e8f4fd;
+    border: 2px solid var(--color-dark-green);
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
   }
 
   .donate-section {
@@ -539,32 +578,29 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .donate-title {
-    color: #2c5aa0;
+    color: var(--color-dark-green);
     margin-bottom: 1rem;
     text-align: center;
   }
 
-     .donation-options {
-     display: flex;
-     flex-direction: column;
-     gap: 0.75rem;
-   }
+  .donation-options {
+    display: flex;
+    flex-direction: column;
+  }
 
   .donation-option {
-    background: #e8f4fd;
-    padding: 1rem;
+    padding: 0.5rem;
     min-width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .option-name {
     margin: 0 0 0.25rem 0;
-    color: #2c5aa0;
+    color: var(--color-dark-green);
   }
 
   .option-status {
     margin: 0;
-    color: #666;
+    color: var(--color-dark-brown);
     /* font-size: 0.8rem; */
   }
 
