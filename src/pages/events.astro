@@ -1,6 +1,7 @@
 ---
 import SecondaryPage from "../layouts/SecondaryPage.astro";
 import events from "../data/events.json";
+import posingInFrontOfLibraryImg from "../assets/posing_in_front_of_library.avif";
 type EventItem = { 
   dateLine: string; 
   title: string; 
@@ -12,7 +13,7 @@ type EventsData = { upcoming: EventItem[]; past: EventItem[] };
 const eventsData = events as EventsData;
 ---
 
-<SecondaryPage title="Events" heroImage="/src/assets/posing_in_front_of_library.avif">
+<SecondaryPage title="Events" heroImage={posingInFrontOfLibraryImg.src}>
    <div class="events-container">
      <section class="events-section">
        <h2 class="section-title">Upcoming Events</h2>

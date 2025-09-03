@@ -1,8 +1,11 @@
 ---
 import SecondaryPage from "../layouts/SecondaryPage.astro";
+import buildingShelfImg from "../assets/building_shelf.avif";
+import kidsReadingImg from "../assets/kids_reading.avif";
+import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
 ---
 
-<SecondaryPage title="Support Us" heroImage="/src/assets/building_shelf.avif">
+<SecondaryPage title="Support Us" heroImage={buildingShelfImg.src}>
   <div class="main-container">
     <!-- Main Content Column -->
     <div class="main-content">
@@ -56,7 +59,7 @@ import SecondaryPage from "../layouts/SecondaryPage.astro";
           </div>
           <div class="image-content">
             <img
-              src="/src/assets/kids_reading.avif"
+              src={kidsReadingImg.src}
               alt="Students studying and learning together"
               class="section-image"
             />
@@ -67,7 +70,7 @@ import SecondaryPage from "../layouts/SecondaryPage.astro";
         <div class="row">
           <div class="image-content">
             <img
-              src="/src/assets/lulu_teaching_drawing.avif"
+              src={luluTeachingDrawingImg.src}
               alt="Community members and students together"
               class="section-image"
             />

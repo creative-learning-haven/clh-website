@@ -1,8 +1,9 @@
 ---
 import SecondaryPage from "../layouts/SecondaryPage.astro";
+import waterfallPaintingImg from "../assets/waterfall_painting.avif";
 ---
 
-<SecondaryPage title="Blog" heroImage="/src/assets/waterfall_painting.avif">
+<SecondaryPage title="Blog" heroImage={waterfallPaintingImg.src}>
   <behold-widget feed-id="r0somW3MsMS6td8wtek1"></behold-widget>
   <script>
     (() => {
