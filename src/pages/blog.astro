@@ -1,6 +1,9 @@
 ---
 import SecondaryPage from "../layouts/SecondaryPage.astro";
 import waterfallPaintingImg from "../assets/waterfall_painting.avif";
+import instagramIcon from "../assets/instagram_icon.svg";
+import facebookIcon from "../assets/facebook_icon.svg";
+import youtubeIcon from "../assets/youtube_icon.svg";
 ---
 
 <SecondaryPage title="Blog" heroImage={waterfallPaintingImg.src}>
@@ -19,13 +22,13 @@ import waterfallPaintingImg from "../assets/waterfall_painting.avif";
     <p class="social-text">Follow us on our socials for more!</p>
     <div class="social-icons">
       <a href="#" class="social-link">
-        <img src="/src/assets/instagram_icon.svg" alt="Instagram" class="social-icon" />
+        <img src={instagramIcon.src} alt="Instagram" class="social-icon" />
       </a>
       <a href="#" class="social-link">
-        <img src="/src/assets/facebook_icon.svg" alt="Facebook" class="social-icon" />
+        <img src={facebookIcon.src} alt="Facebook" class="social-icon" />
       </a>
       <a href="#" class="social-link">
-        <img src="/src/assets/youtube_icon.svg" alt="YouTube" class="social-icon" />
+        <img src={youtubeIcon.src} alt="YouTube" class="social-icon" />
       </a>
     </div>
   </div>
