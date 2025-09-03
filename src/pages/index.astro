@@ -663,7 +663,6 @@ import { activities } from '../data/site.js';
 		padding: 20px;
 		background: rgba(0, 0, 0, 0.8);
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-		border-radius: 8px;
 	}
 
 	.quote-overlay blockquote {
@@ -686,16 +685,35 @@ import { activities } from '../data/site.js';
 
 	@media (max-width: 768px) {
 		.quote-banner {
-			min-height: 250px;
-			padding: 30px 16px;
+			min-height: 400px;
+			padding: 0;
+			flex-direction: column;
+			position: relative;
+		}
+
+		.quote-banner::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 120px;
+			background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+			z-index: 0;
 		}
 
 		.quote-overlay {
-			bottom: 20px;
-			left: 20px;
-			right: 20px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
 			max-width: none;
-			padding: 20px;
+			padding: 20px 16px;
+			margin: 0;
+			background: rgba(0, 0, 0, 0.8);
+			width: 100%;
+			box-sizing: border-box;
+			z-index: 1;
 		}
 
 		.quote-overlay blockquote {
