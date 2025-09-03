@@ -1,6 +1,7 @@
 ---
 import SecondaryPage from '../layouts/SecondaryPage.astro';
 import luluWithKidsImg from '../assets/lulu_with_kids.avif';
+import { social } from '../data/site';
 ---
 
 <SecondaryPage title="Contact" heroImage={luluWithKidsImg.src}>
@@ -14,9 +15,9 @@ import luluWithKidsImg from '../assets/lulu_with_kids.avif';
 				<p>You can also follow us or reach out on social media:</p>
 				
 				<ul class="social-links">
-					<li><a href="#" class="social-link">Instagram</a></li>
-					<li><a href="#" class="social-link">Facebook</a></li>
-					<li><a href="#" class="social-link">Youtube</a></li>
+					<li><a href={social.instagram} class="social-link">Instagram</a></li>
+					<li><a href={social.facebook} class="social-link">Facebook</a></li>
+					<li><a href={social.youtube} class="social-link">Youtube</a></li>
 				</ul>
 			</div>
 		</div>

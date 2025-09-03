@@ -4,6 +4,7 @@ import waterfallPaintingImg from "../assets/waterfall_painting.avif";
 import instagramIcon from "../assets/instagram_icon.svg";
 import facebookIcon from "../assets/facebook_icon.svg";
 import youtubeIcon from "../assets/youtube_icon.svg";
+import { social } from "../data/site";
 ---
 
 <SecondaryPage title="Blog" heroImage={waterfallPaintingImg.src}>
@@ -21,13 +22,13 @@ import youtubeIcon from "../assets/youtube_icon.svg";
   <div class="social-section">
     <p class="social-text">Follow us on our socials for more!</p>
     <div class="social-icons">
-      <a href="#" class="social-link">
+      <a href={social.instagram} class="social-link">
         <img src={instagramIcon.src} alt="Instagram" class="social-icon" />
       </a>
-      <a href="#" class="social-link">
+      <a href={social.facebook} class="social-link">
         <img src={facebookIcon.src} alt="Facebook" class="social-icon" />
       </a>
-      <a href="#" class="social-link">
+      <a href={social.youtube} class="social-link">
         <img src={youtubeIcon.src} alt="YouTube" class="social-icon" />
       </a>
     </div>
