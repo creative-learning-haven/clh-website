@@ -1,1077 +1,1236 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import heroImg from '../assets/reading.avif';//'../assets/P1090543.jpg';
-import libraryGroupImg from '../assets/library_group.avif';
-import groupEventsImg from '../assets/group_event.avif';
-import groupStudyImg from '../assets/group_study.avif';
-import headphonesFunImg from '../assets/headphones_fun.avif';
-import landscapeImg from '../assets/landscape_2.avif';
+import Layout from "../layouts/Layout.astro";
+import heroImg from "../assets/reading.avif"; //'../assets/P1090543.jpg';
+import libraryGroupImg from "../assets/library_group.avif";
+import groupEventsImg from "../assets/group_event.avif";
+import groupStudyImg from "../assets/group_study.avif";
+import headphonesFunImg from "../assets/headphones_fun.avif";
+import landscapeImg from "../assets/landscape_2.avif";
 
-import ActivitiesCarousel from '../components/ActivitiesCarousel.astro';
-import { activities } from '../data/site.js';
+import ActivitiesCarousel from "../components/ActivitiesCarousel.astro";
+import { activities } from "../data/site.js";
 ---
 
 <Layout>
-	{/* Toast notification for successful subscription */}
-	<div id="toast" class="toast toast-success" style="display: none;">
-		<div class="toast-content">
-			<span class="toast-icon">✓</span>
-			<div class="toast-message">
-				<strong>Thank you for subscribing!</strong>
-				<p>We've added <span class="email-highlight" id="subscriber-email"></span> to our newsletter list.</p>
-			</div>
-		</div>
-	</div>
+  {/* Toast notification for successful subscription */}
+  <div id="toast" class="toast toast-success" style="display: none;">
+    <div class="toast-content">
+      <span class="toast-icon">✓</span>
+      <div class="toast-message">
+        <strong>Thank you for subscribing!</strong>
+        <p>
+          We've added <span class="email-highlight" id="subscriber-email"
+          ></span> to our newsletter list.
+        </p>
+      </div>
+    </div>
+  </div>
 
-	<section class="hero" style={`--hero-image: url(${heroImg.src})`}>
-		<div class="hero-inner">
-			<h1>
-				<span>Knowledge is Peace</span>
-			</h1>
-			<p class="tagline">Community-run libraries for brighter futures in Uganda's refugee settlements</p>
-		</div>
-	</section>
+  <section class="hero" style={`--hero-image: url(${heroImg.src})`}>
+    <div class="hero-inner">
+      <h1>
+        <span>Knowledge is Peace</span>
+      </h1>
+      <p class="tagline">
+        Community-run libraries for brighter futures in Uganda's refugee
+        settlements
+      </p>
+    </div>
+  </section>
 
-	<section class="cards-section">
-		<div class="cards-container">
-			<div class="text-column">
-				<h3>Our Mission</h3>
-				<p>Uganda's Imvepi and Rhino refugee settlements were established to shelter people fleeing conflict in South Sudan. Today, one of the greatest needs that these communities face is access to education and reading. Creative Learning Haven was founded to meet this need by creating libraries and learning spaces, run by members of the communities they serve.</p>
-				<br/>
-				<!-- <a href="/about">Learn More About Who We Are →</a> -->
-			</div>
-			
-			<div class="text-column">
-				<h3>Support Us</h3>
-				<p>Our libraries and activities are entirely crowd-funded. We have already reached 800+ people and circulated 2,000+ books. With your help, we can continue to provide educational resources and creative activities for these communities.</p>
-				<br/>
-				<a href="/support-us" class="learn-more-btn">Learn How You Can Help →</a>
-			</div>
-		</div>
-	</section>
+  <section class="cards-section">
+    <div class="cards-container">
+      <div class="text-column">
+        <h3>Our Mission</h3>
+        <p>
+          Uganda's Imvepi and Rhino refugee settlements were established to
+          shelter people fleeing conflict in South Sudan. Today, one of the
+          greatest needs that these communities face is access to education and
+          reading. Creative Learning Haven was founded to meet this need by
+          creating libraries and learning spaces, run by members of the
+          communities they serve.
+        </p>
+        <br />
+        <!-- <a href="/about">Learn More About Who We Are →</a> -->
+      </div>
 
-	<section class="youtube-videos-section">
-		<div class="section-header">
-			<h2 class="section-title">Who We Are</h2>
-			<p class="section-description">Hear from the teams in our two libraries, Imvepi and Rhino (Ocea).</p>
-		</div>
-		<div class="videos-container">
-			<div class="video-item">
-				<div class="video-wrapper">
-					<iframe 
-						src="https://www.youtube.com/embed/OmtP8EZ2rrw?si=ZK9j5Ok91yhuM10O" 
-						title="Imvepi Library Video" 
-						frameborder="0" 
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-						referrerpolicy="strict-origin-when-cross-origin" 
-						allowfullscreen>
-					</iframe>
-				</div>
-				<!-- <h3 class="video-heading">Imvepi</h3> -->
+      <div class="text-column">
+        <h3>Support Us</h3>
+        <p>
+          Our libraries and activities are entirely crowd-funded. We have
+          already reached 800+ people and circulated 2,000+ books. With your
+          help, we can continue to provide educational resources and creative
+          activities for these communities.
+        </p>
+        <br />
+        <a href="/support-us" class="learn-more-btn">Learn How You Can Help →</a
+        >
+      </div>
+    </div>
+  </section>
 
-			</div>
-			
-			<div class="video-item">
-				<!-- <h3 class="video-heading">Rhino</h3> -->
-				<div class="video-wrapper">
-					<iframe 
-						src="https://www.youtube.com/embed/dYjXS4EQyRA?si=uw0WOKRTyz09n5Gi" 
-						title="Rhino Library Video" 
-						frameborder="0" 
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-						referrerpolicy="strict-origin-when-cross-origin" 
-						allowfullscreen>
-					</iframe>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section class="youtube-videos-section">
+    <div class="section-header">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="section-description">
+        Hear from the teams in our two libraries, Imvepi and Rhino (Ocea).
+      </p>
+    </div>
+    <div class="videos-container">
+      <div class="video-item">
+        <div class="video-wrapper">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/GET2B9g_Mok?si=HIXoiHdjnmPkk1_F"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <!-- <h3 class="video-heading">Imvepi</h3> -->
+      </div>
 
-	<section class="what-we-do-section" style={`--meta-painting-bg: url(${landscapeImg.src})`}>
-		<h2 class="activities-title">What We Do</h2>
-		<ActivitiesCarousel activities={activities} />
-	</section>
+      <div class="video-item">
+        <!-- <h3 class="video-heading">Rhino</h3> -->
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/dYjXS4EQyRA?si=uw0WOKRTyz09n5Gi"
+            title="Rhino Library Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section class="quote-banner" style={`--banner-image: url(${libraryGroupImg.src})`}>
-		<div class="quote-overlay">
-			<blockquote>
-				"We don't want this generation of South Sudanese, Congolese, or Ugandans to miss the opportunity of education"
-			</blockquote>
-			<cite>- Peter Hardrock (CLH Imvepi Team Lead)</cite>
-		</div>
-	</section>
+  <section
+    class="what-we-do-section"
+    style={`--meta-painting-bg: url(${landscapeImg.src})`}
+  >
+    <h2 class="activities-title">What We Do</h2>
+    <ActivitiesCarousel activities={activities} />
+  </section>
 
-	<section class="content-row events-section">
-		<div class="content-text">
-			<h2>Events</h2>
-			<p>Check out our events page to see our exciting upcoming events, workshops, and activities — both in Uganda and the United States.</p>
-			<a href="/events" class="learn-more-btn">Learn More →</a>
-		</div>
-		<div class="content-image">
-			<img src={groupEventsImg.src} alt="Community members gathered together" />
-		</div>
-	</section>
+  <section
+    class="quote-banner"
+    style={`--banner-image: url(${libraryGroupImg.src})`}
+  >
+    <div class="quote-overlay">
+      <blockquote>
+        "We don't want this generation of South Sudanese, Congolese, or Ugandans
+        to miss the opportunity of education"
+      </blockquote>
+      <cite>- Peter Hardrock (CLH Imvepi Team Lead)</cite>
+    </div>
+  </section>
 
-	<section class="content-row content-row-reverse">
-		<div class="content-image">
-			<img src={headphonesFunImg.src} alt="Students studying together in the library" />
-		</div>
-		<div class="content-text">
-			<h2>Socials</h2>
-			<p>We are regularly putting out new content to showcase the lives and stories of our community. Follow along with us on our social media pages to see the latest updates.</p>
-			<a href="/blog" class="learn-more-btn">Learn More →</a>
-		</div>
-	</section>
+  <section class="content-row events-section">
+    <div class="content-text">
+      <h2>Events</h2>
+      <p>
+        Check out our events page to see our exciting upcoming events,
+        workshops, and activities — both in Uganda and the United States.
+      </p>
+      <a href="/events" class="learn-more-btn">Learn More →</a>
+    </div>
+    <div class="content-image">
+      <img src={groupEventsImg.src} alt="Community members gathered together" />
+    </div>
+  </section>
 
-	{/* Newsletter Signup Section */}
-	<section class="newsletter-signup">
-		<div class="newsletter-container">
-			<div class="newsletter-content">
-				<h2>Stay Connected</h2>
-				<p>Subscribe to our newsletter to learn how you can get involved and receive the latest updates on our work.</p>
-				<form class="newsletter-form" action="/api/subscribe" method="POST">
-					<input 
-						type="email" 
-						name="email" 
-						placeholder="Enter your email address" 
-						required
-						class="newsletter-input"
-					>
-					<button type="submit" class="newsletter-button">Subscribe</button>
-				</form>
-			</div>
-		</div>
-	</section>
+  <section class="content-row content-row-reverse">
+    <div class="content-image">
+      <img
+        src={headphonesFunImg.src}
+        alt="Students studying together in the library"
+      />
+    </div>
+    <div class="content-text">
+      <h2>Socials</h2>
+      <p>
+        We are regularly putting out new content to showcase the lives and
+        stories of our community. Follow along with us on our social media pages
+        to see the latest updates.
+      </p>
+      <a href="/blog" class="learn-more-btn">Learn More →</a>
+    </div>
+  </section>
 
-	<script>
-		// Check URL parameters and show toast if user just subscribed
-		document.addEventListener('DOMContentLoaded', function() {
-			const url = new URL(window.location.href);
-			const subscribed = url.searchParams.get('subscribed');
-			const email = url.searchParams.get('email');
-			
-			const toast = document.getElementById('toast');
-			const emailSpan = document.getElementById('subscriber-email');
-			
-			if (subscribed === 'true' && email && toast && emailSpan) {
-				// Set the email in the toast
-				emailSpan.textContent = email;
-				
-				// Show the toast
-				toast.style.display = 'block';
-				
-				// Auto-hide after 5 seconds
-				setTimeout(() => {
-					toast.classList.add('hiding');
-					setTimeout(() => {
-						toast.style.display = 'none';
-						toast.classList.remove('hiding');
-					}, 300); // Wait for animation to complete
-				}, 5000); // Hide after 5 seconds
-			}
-		});
-	</script>
+  {/* Newsletter Signup Section */}
+  <section class="newsletter-signup">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2>Stay Connected</h2>
+        <p>
+          Subscribe to our newsletter to learn how you can get involved and
+          receive the latest updates on our work.
+        </p>
+        <form class="newsletter-form" action="/api/subscribe" method="POST">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+            class="newsletter-input"
+          />
+          <button type="submit" class="newsletter-button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Check URL parameters and show toast if user just subscribed
+    document.addEventListener("DOMContentLoaded", function () {
+      const url = new URL(window.location.href);
+      const subscribed = url.searchParams.get("subscribed");
+      const email = url.searchParams.get("email");
+
+      const toast = document.getElementById("toast");
+      const emailSpan = document.getElementById("subscriber-email");
+
+      if (subscribed === "true" && email && toast && emailSpan) {
+        // Set the email in the toast
+        emailSpan.textContent = email;
+
+        // Show the toast
+        toast.style.display = "block";
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+          toast.classList.add("hiding");
+          setTimeout(() => {
+            toast.style.display = "none";
+            toast.classList.remove("hiding");
+          }, 300); // Wait for animation to complete
+        }, 5000); // Hide after 5 seconds
+      }
+    });
+  </script>
 </Layout>
 
 <style>
-	.hero {
-		position: relative;
-		min-height: 60vh;
-		color: white;
-		display: grid;
-		place-items: center;
-		z-index: 0;
-		overflow: hidden;
-	}
-
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-image: var(--hero-image);
-		background-size: cover;
-		background-position: top center;
-		background-repeat: no-repeat;
-		z-index: -2;
-	}
-
-	.hero::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: var(--overlay-dark);
-		z-index: -1;
-	}
-
-	.hero-inner {
-		/* max-width: 940px; */
-		padding: 4vh 16px 5vh;
-		text-align: center;
-		max-width: 90vw;
-		margin: 0 auto;
-	}
-
-	/* Staggered rise-in animation for hero content (slower + stronger) */
-	.hero-inner > * {
-		opacity: 0;
-		transform: translateY(100px);
-		animation: riseIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-	}
-
-	.hero-inner > *:nth-child(1) { animation-delay: .15s; }
-	.hero-inner > *:nth-child(2) { animation-delay: .35s; }
-	.hero-inner > *:nth-child(3) { animation-delay: .55s; }
-
-	@keyframes riseIn {
-		from { opacity: 0; transform: translateY(60px); filter: blur(4px); }
-		to { opacity: 1; transform: translateY(0); filter: blur(0); }
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.hero-inner > * { animation: none; opacity: 1; transform: none; filter: none; }
-	}
-
-	/* Mobile-specific hero adjustments */
-	@media (max-width: 768px) {
-		.hero-inner {
-			padding: 6vh 20px 8vh;
-			max-width: 95vw;
-		}
-		
-		.tagline {
-			margin-top: 40px;
-			padding: 6px 12px;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.hero-inner {
-			padding: 8vh 16px 10vh;
-		}
-		
-		.tagline {
-			margin-top: 30px;
-			padding: 4px 10px;
-			font-size: clamp(1em, 4vw, 1.2em);
-		}
-	}
-
-	/* Cards Section Styles */
-	.cards-section {
-		padding: 60px 16px;
-		background: var(--color-dark-brown);
-		color: var(--color-light-yellow);
-	}
-
-	.cards-container {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 60px;
-		position: relative;
-	}
-
-	.cards-container::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 0;
-		bottom: 0;
-		width: 2px;
-		background: white;
-		opacity: 0.6;
-		transform: translateX(-50%);
-	}
-
-	.text-column h3 {
-		font-size: 24px;
-		margin: 0 0 20px 0;
-		color: white;
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		text-transform: uppercase;
-	}
-
-	.text-column p {
-		font-size: 18px;
-		line-height: 1.7;
-		color: white;
-		margin: 0;
-	}
-
-	.text-column ul {
-		list-style-type: disc;
-		padding-left: 20px;
-		font-size: 18px;
-		line-height: 1.7;
-		color: var(--color-light-yellow);
-		margin: 0;
-	}
-
-	.button-container {
-		text-align: center;
-		margin-top: 20px;
-	}
-
-	@media (max-width: 900px) {
-		.cards-container {
-			grid-template-columns: 1fr;
-			gap: 40px;
-		}
-		
-		.cards-container::after {
-			display: none;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.cards-section {
-			padding: 40px 16px;
-		}
-		
-		.text-column h3 {
-			font-size: 20px;
-		}
-		
-		.text-column p {
-			font-size: 16px;
-		}
-	}
-
-	.tagline {
-		display: inline-block;
-		font-size: clamp(1.1em, 3.5vw, 1.4em);
-		max-width: min(90vw, 800px);
-		padding: 8px 14px;
-		margin-top: 60px;
-		border-radius: 10px;
-		letter-spacing: .08em;
-		font-weight: 800; 
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-	}
-
-	h1 {
-		margin: 10px 0 6px;
-		font-size: clamp(28px, 8vw, 50px);
-		line-height: 0.95;
-		text-transform: uppercase;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-	}
-
-	.line2 { display: block; font-size: 1.1em; }
-
-	.subtitle {
-		max-width: 780px;
-		margin: 12px auto 0;
-		font-size: clamp(16px, 2.2vw, 20px);
-		color: var(--white-strong);
-		text-shadow: 0 1px 2px rgba(0,0,0,0.25);
-	}
-
-	.panels {
-		display: grid;
-		/* Left column wider than right; right ≈ 60% of left (5:3 ratio) */
-		grid-template-columns: 5fr 3fr;
-		grid-template-rows: auto auto;
-		gap: 0;
-		max-width: 98%;
-		margin: 16px auto 0;
-		padding: 0 16px;
-		position: relative;
-		z-index: 1;
-	}
-
-	.panel { padding: 36px 32px; min-height: 280px; }
-
-	.mission { background: var(--section-light); }
-
-	.pledge {
-		background: var(--color-pledge-red);
-		color: var(--color-pledge-red-text);
-		display: grid;
-		place-items: center;
-		text-align: center;
-	}
-
-	.pledge .cta {
-		background: var(--color-white);
-		color: var(--color-pledge-cta-text);
-		text-decoration: none;
-		font-weight: 800;
-		padding: 12px 18px;
-		border-radius: 999px;
-		box-shadow: inset 0 -2px 0 rgba(0,0,0,.2);
-		transition: background .2s ease, color .2s ease, border-color .2s ease;
-	}
-
-	.pledge .cta:hover,
-	.pledge .cta:focus-visible { background: var(--section-light); color: var(--color-pledge-cta-text); }
-
-	.socials { background: var(--color-socials-green); color: var(--color-teal-ink); }
-	.socials .link { color: var(--color-teal-ink); font-weight: 700; }
-
-	.subscribe { background: var(--color-dark-green); color: var(--color-subscribe-foreground); }
-	.subscribe-form { display: flex; gap: 8px; margin-top: 8px; }
-	.subscribe-form input {
-		flex: 1;
-		min-width: 0;
-		padding: 10px 12px;
-		border-radius: 8px;
-		border: 1px solid var(--color-subscribe-input-border);
-		background: var(--color-subscribe-input-bg);
-		color: var(--color-subscribe-input-text);
-	}
-	.subscribe-form button {
-		background: var(--color-accent);
-		color: var(--color-teal-ink);
-		border: 0;
-		border-radius: 8px;
-		padding: 10px 14px;
-		font-weight: 800;
-	}
-
-	.link { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--color-link-strong); }
-
-	@media (max-width: 900px) {
-		.panels { grid-template-columns: 1fr; }
-		.panel { min-height: 220px; }
-	}
-
-	.what-we-do-section {
-		position: relative;
-		padding: 80px 0;
-		background-image: var(--meta-painting-bg);
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-attachment: scroll;
-	}
-
-	.what-we-do-section::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(to bottom, 
-			rgba(255, 255, 255, 1) 0%, 
-			rgba(255, 255, 255, 1) 20%, 
-			rgba(255, 255, 255, 0.8) 40%, 
-			rgba(255, 255, 255, 0.6) 60%, 
-			rgba(255, 255, 255, 0.6) 100%);
-		z-index: 0;
-	}
-
-	.what-we-do-section > * {
-		position: relative;
-		z-index: 1;
-	}
-
-	.activities-title {
-		/* margin: 60px 0; */
-		margin-top: 0;
-		margin-bottom: 0;
-		text-align: center;
-		color: var(--color-dark-brown);
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		text-transform: uppercase;
-		font-size: clamp(18px, 2em, 40px);
-	}
-
-	/* Toast notification styles */
-	.toast {
-		position: fixed;
-		top: 80px; /* Below the navbar */
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 1000;
-		max-width: 90vw;
-		width: 400px;
-		border-radius: 12px;
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-		animation: toastSlideIn 0.3s ease-out;
-	}
-
-	.toast-success {
-		background: linear-gradient(135deg, #4ade80, #22c55e);
-		color: white;
-		border: 1px solid #16a34a;
-	}
-
-	.toast-content {
-		display: flex;
-		align-items: flex-start;
-		gap: 12px;
-		padding: 16px 20px;
-	}
-
-	.toast-icon {
-		font-size: 20px;
-		font-weight: bold;
-		color: white;
-		flex-shrink: 0;
-		margin-top: 2px;
-	}
-
-	.toast-message {
-		flex: 1;
-	}
-
-	.toast-message strong {
-		display: block;
-		font-size: 16px;
-		margin-bottom: 4px;
-	}
-
-	.toast-message p {
-		margin: 0;
-		font-size: 14px;
-		opacity: 0.95;
-		line-height: 1.4;
-	}
-
-	.email-highlight {
-		background: rgba(255, 255, 255, 0.2);
-		padding: 2px 6px;
-		border-radius: 4px;
-		font-family: monospace;
-		font-weight: 600;
-	}
-
-	@keyframes toastSlideIn {
-		from {
-			opacity: 0;
-			transform: translateX(-50%) translateY(-20px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(-50%) translateY(0);
-		}
-	}
-
-	@keyframes toastSlideOut {
-		from {
-			opacity: 1;
-			transform: translateX(-50%) translateY(0);
-		}
-		to {
-			opacity: 0;
-			transform: translateX(-50%) translateY(-20px);
-		}
-	}
-
-	.toast.hiding {
-		animation: toastSlideOut 0.3s ease-in forwards;
-	}
-
-	/* Activity sections styles */
-	.activity-section {
-		margin: 60px auto;
-		max-width: 1200px;
-		padding: 0 16px;
-	}
-
-	.activity-content {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 60px;
-		align-items: center;
-	}
-
-	.activity-content.reverse {
-		direction: rtl;
-	}
-
-	.activity-content.reverse > * {
-		direction: ltr;
-	}
-
-	.activity-text h3 {
-		font-size: clamp(14px, 2vw, 28px);
-		margin-bottom: 20px;
-		color: var(--color-dark-green);
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		text-transform: uppercase;
-	}
-
-	.activity-text p {
-		font-size: 18px;
-		line-height: 1.6;
-		color: var(--color-text);
-		margin: 0;
-	}
-
-	.activity-images {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.image-collage {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		gap: 12px;
-		width: 100%;
-		max-width: 400px;
-		aspect-ratio: 1;
-	}
-
-	.image-placeholder {
-		background: var(--section-light);
-		border: 2px dashed var(--color-dark-green);
-		border-radius: 8px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--color-dark-green);
-		font-weight: 600;
-		font-size: 14px;
-		transition: all 0.2s ease;
-	}
-
-	.learn-more-btn {
-		display: inline-block;
-		margin-top: 20px;
-		padding: 12px 24px;
-		background: var(--color-yellow);
-		color: var(--color-dark-green);
-		text-decoration: none;
-		border-radius: 8px;
-		font-weight: 700;
-		transition: all 0.2s ease;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-	}
-
-	.learn-more-btn:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-	}
-
-	@media (max-width: 768px) {
-		.what-we-do-section {
-			padding: 60px 0;
-			background-attachment: scroll; /* Better performance on mobile */
-		}
-
-		.activity-content {
-			grid-template-columns: 1fr;
-			gap: 40px;
-		}
-
-		.activity-content.reverse {
-			direction: ltr;
-		}
-
-		.activity-section {
-			margin: 40px auto;
-		}
-
-		.image-collage {
-			max-width: 300px;
-		}
-	}
-
-	/* Quote Banner Styles */
-	.quote-banner {
-		position: relative;
-		min-height: 700px; /* Adjust as needed */
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-image: var(--banner-image);
-		background-size: cover;
-		background-position: center;
-		background-repeat: no-repeat;
-		color: white;
-		text-align: left;
-		padding: 40px 16px;
-		margin-bottom: 80px;
-		z-index: 0;
-	}
-
-	.quote-banner::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: -1;
-	}
-
-	.quote-overlay {
-		position: absolute;
-		bottom: 40px;
-		left: 40px;
-		z-index: 1;
-		max-width: 600px;
-		padding: 20px;
-		background: rgba(0, 0, 0, 0.8);
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-	}
-
-	.quote-overlay blockquote {
-		font-size: 24px;
-		line-height: 1.6;
-		font-style: italic;
-		color: var(--white-strong);
-		margin-bottom: 15px;
-		padding-left: 20px;
-	}
-
-	.quote-overlay cite {
-		font-size: 18px;
-		font-style: normal;
-		color: var(--white-strong);
-		display: block;
-		text-align: right;
-		margin-top: 10px;
-	}
-
-	@media (max-width: 768px) {
-		.quote-banner {
-			min-height: 400px;
-			padding: 0;
-			flex-direction: column;
-			position: relative;
-		}
-
-		.quote-banner::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			height: 120px;
-			background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-			z-index: 0;
-		}
-
-		.quote-overlay {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			max-width: none;
-			padding: 20px 16px;
-			margin: 0;
-			background: rgba(0, 0, 0, 0.8);
-			width: 100%;
-			box-sizing: border-box;
-			z-index: 1;
-		}
-
-		.quote-overlay blockquote {
-			font-size: 18px;
-			padding-left: 15px;
-		}
-
-		.quote-overlay cite {
-			font-size: 14px;
-		}
-	}
-
-	/* Content Row Styles */
-	.content-row {
-		display: flex;
-		align-items: center;
-		gap: 60px;
-		max-width: 1200px;
-		margin: 80px auto;
-		padding: 0 20px;
-	}
-
-	.content-text {
-		flex: 1;
-	}
-
-	.content-text h2 {
-		font-size: 32px;
-		color: var(--primary-color, var(--color-dark-brown));
-		margin-bottom: 20px;
-		font-weight: 600;
-	}
-
-	.content-text p {
-		font-size: 18px;
-		line-height: 1.7;
-		color: var(--text-color, #333);
-		margin-bottom: 0;
-	}
-
-	.content-image {
-		flex: 1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.content-image img {
-		max-width: 100%;
-		height: auto;
-		border-radius: 12px;
-		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-	}
-
-	@media (max-width: 768px) {
-		.content-row {
-			flex-direction: column;
-			gap: 40px;
-			margin: 60px auto;
-			padding: 0 16px;
-		}
-
-		.content-row-reverse {
-			flex-direction: column;
-		}
-
-		/* Events section: image above text on mobile */
-		.events-section {
-			flex-direction: column-reverse;
-		}
-
-		.content-text h2 {
-			font-size: 28px;
-		}
-
-		.content-text p {
-			font-size: 16px;
-		}
-	}
-
-	/* Newsletter Signup Styles */
-	.newsletter-signup {
-		padding: 80px 16px;
-		background: var(--section-light);
-		text-align: left;
-	}
-
-	.newsletter-container {
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-	.newsletter-content h2 {
-		font-size: 28px;
-		color: var(--color-dark-brown);
-		margin-bottom: 15px;
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		text-transform: uppercase;
-	}
-
-	.newsletter-content p {
-		font-size: 18px;
-		line-height: 1.7;
-		color: var(--color-text);
-		margin-bottom: 30px;
-	}
-
-	.newsletter-form {
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-		max-width: 400px;
-	}
-
-	.newsletter-input {
-		padding: 12px 16px;
-		border: 2px solid var(--color-light-brown);
-		border-radius: 8px;
-		outline: none;
-		font-size: 16px;
-		color: var(--color-text);
-		background: var(--color-white);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		transition: border-color 0.2s ease;
-	}
-
-	.newsletter-input:focus {
-		border-color: var(--color-yellow);
-	}
-
-	.newsletter-button {
-		background: var(--color-yellow);
-		color: var(--color-dark-green);
-		border: none;
-		padding: 12px 20px;
-		border-radius: 8px;
-		font-weight: 800;
-		cursor: pointer;
-		transition: background 0.2s ease;
-		white-space: nowrap;
-	}
-
-	.newsletter-button:hover {
-		background: var(--color-accent-dark);
-	}
-
-	@media (max-width: 768px) {
-		.newsletter-signup {
-			padding: 60px 16px;
-		}
-
-		.newsletter-content h2 {
-			font-size: 24px;
-		}
-
-		.newsletter-content p {
-			font-size: 16px;
-		}
-
-		.newsletter-form {
-			max-width: 100%;
-		}
-
-		.newsletter-input {
-			padding: 10px 16px;
-		}
-
-		.newsletter-button {
-			padding: 10px 16px;
-			width: 100%;
-		}
-	}
-
-	/* YouTube Videos Section Styles */
-	.youtube-videos-section {
-		padding: 80px 16px;
-	}
-
-	.section-header {
-		text-align: center;
-		margin-bottom: 60px;
-		max-width: 800px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.section-title {
-		font-size: clamp(18px, 2em, 40px);
-		color: var(--color-light-brown);
-		margin: 0 0 20px 0;
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		text-transform: uppercase;
-		font-weight: 700;
-	}
-
-	.section-description {
-		font-size: 18px;
-		line-height: 1.6;
-		color: var(--color-text);
-		margin: 0;
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.videos-container {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 60px;
-		align-items: start;
-	}
-
-	.video-item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		text-align: center;
-	}
-
-	.video-heading {
-		font-size: 24px;
-		color: var(--color-light-brown);
-		margin: 0 0 30px 0;
-		font-family: 'Lulo Clean Custom', 'Avenir Custom', Avenir, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-		text-transform: uppercase;
-		font-weight: 700;
-		letter-spacing: 0.5px;
-	}
-
-	.video-wrapper {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding-bottom: 56.25%; /* 16:9 aspect ratio */
-		background: #000;
-		border-radius: 12px;
-		overflow: hidden;
-		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.video-wrapper:hover {
-		transform: translateY(-4px);
-		box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-	}
-
-	.video-wrapper iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border: none;
-		border-radius: 12px;
-	}
-
-	/* Mobile responsive styles */
-	@media (max-width: 768px) {
-		.youtube-videos-section {
-			padding: 60px 16px;
-		}
-
-		.section-header {
-			margin-bottom: 50px;
-		}
-
-		.section-title {
-			font-size: clamp(20px, 5vw, 28px);
-		}
-
-		.section-description {
-			font-size: 16px;
-		}
-
-		.videos-container {
-			grid-template-columns: 1fr;
-			gap: 50px;
-		}
-
-		.video-heading {
-			font-size: 20px;
-			margin-bottom: 25px;
-		}
-
-		.video-wrapper {
-			box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-		}
-	}
-
-	@media (max-width: 480px) {
-		.youtube-videos-section {
-			padding: 50px 16px;
-		}
-
-		.videos-container {
-			gap: 40px;
-		}
-
-		.video-heading {
-			font-size: 18px;
-			margin-bottom: 20px;
-		}
-	}
-
-
+  .hero {
+    position: relative;
+    min-height: 60vh;
+    color: white;
+    display: grid;
+    place-items: center;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    z-index: -2;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--overlay-dark);
+    z-index: -1;
+  }
+
+  .hero-inner {
+    /* max-width: 940px; */
+    padding: 4vh 16px 5vh;
+    text-align: center;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  /* Staggered rise-in animation for hero content (slower + stronger) */
+  .hero-inner > * {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: riseIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .hero-inner > *:nth-child(1) {
+    animation-delay: 0.15s;
+  }
+  .hero-inner > *:nth-child(2) {
+    animation-delay: 0.35s;
+  }
+  .hero-inner > *:nth-child(3) {
+    animation-delay: 0.55s;
+  }
+
+  @keyframes riseIn {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-inner > * {
+      animation: none;
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+
+  /* Mobile-specific hero adjustments */
+  @media (max-width: 768px) {
+    .hero-inner {
+      padding: 6vh 20px 8vh;
+      max-width: 95vw;
+    }
+
+    .tagline {
+      margin-top: 40px;
+      padding: 6px 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-inner {
+      padding: 8vh 16px 10vh;
+    }
+
+    .tagline {
+      margin-top: 30px;
+      padding: 4px 10px;
+      font-size: clamp(1em, 4vw, 1.2em);
+    }
+  }
+
+  /* Cards Section Styles */
+  .cards-section {
+    padding: 60px 16px;
+    background: var(--color-dark-brown);
+    color: var(--color-light-yellow);
+  }
+
+  .cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    position: relative;
+  }
+
+  .cards-container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: white;
+    opacity: 0.6;
+    transform: translateX(-50%);
+  }
+
+  .text-column h3 {
+    font-size: 24px;
+    margin: 0 0 20px 0;
+    color: white;
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    text-transform: uppercase;
+  }
+
+  .text-column p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: white;
+    margin: 0;
+  }
+
+  .text-column ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-light-yellow);
+    margin: 0;
+  }
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .cards-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .cards-container::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .cards-section {
+      padding: 40px 16px;
+    }
+
+    .text-column h3 {
+      font-size: 20px;
+    }
+
+    .text-column p {
+      font-size: 16px;
+    }
+  }
+
+  .tagline {
+    display: inline-block;
+    font-size: clamp(1.1em, 3.5vw, 1.4em);
+    max-width: min(90vw, 800px);
+    padding: 8px 14px;
+    margin-top: 60px;
+    border-radius: 10px;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  h1 {
+    margin: 10px 0 6px;
+    font-size: clamp(28px, 8vw, 50px);
+    line-height: 0.95;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+  .line2 {
+    display: block;
+    font-size: 1.1em;
+  }
+
+  .subtitle {
+    max-width: 780px;
+    margin: 12px auto 0;
+    font-size: clamp(16px, 2.2vw, 20px);
+    color: var(--white-strong);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .panels {
+    display: grid;
+    /* Left column wider than right; right ≈ 60% of left (5:3 ratio) */
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+    max-width: 98%;
+    margin: 16px auto 0;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .panel {
+    padding: 36px 32px;
+    min-height: 280px;
+  }
+
+  .mission {
+    background: var(--section-light);
+  }
+
+  .pledge {
+    background: var(--color-pledge-red);
+    color: var(--color-pledge-red-text);
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .pledge .cta {
+    background: var(--color-white);
+    color: var(--color-pledge-cta-text);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 12px 18px;
+    border-radius: 999px;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .pledge .cta:hover,
+  .pledge .cta:focus-visible {
+    background: var(--section-light);
+    color: var(--color-pledge-cta-text);
+  }
+
+  .socials {
+    background: var(--color-socials-green);
+    color: var(--color-teal-ink);
+  }
+  .socials .link {
+    color: var(--color-teal-ink);
+    font-weight: 700;
+  }
+
+  .subscribe {
+    background: var(--color-dark-green);
+    color: var(--color-subscribe-foreground);
+  }
+  .subscribe-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .subscribe-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--color-subscribe-input-border);
+    background: var(--color-subscribe-input-bg);
+    color: var(--color-subscribe-input-text);
+  }
+  .subscribe-form button {
+    background: var(--color-accent);
+    color: var(--color-teal-ink);
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-weight: 800;
+  }
+
+  .link {
+    display: inline-block;
+    margin-top: 12px;
+    font-weight: 700;
+    color: var(--color-link-strong);
+  }
+
+  @media (max-width: 900px) {
+    .panels {
+      grid-template-columns: 1fr;
+    }
+    .panel {
+      min-height: 220px;
+    }
+  }
+
+  .what-we-do-section {
+    position: relative;
+    padding: 80px 0;
+    background-image: var(--meta-painting-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
+  .what-we-do-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 20%,
+      rgba(255, 255, 255, 0.8) 40%,
+      rgba(255, 255, 255, 0.6) 60%,
+      rgba(255, 255, 255, 0.6) 100%
+    );
+    z-index: 0;
+  }
+
+  .what-we-do-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .activities-title {
+    /* margin: 60px 0; */
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    color: var(--color-dark-brown);
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(18px, 2em, 40px);
+  }
+
+  /* Toast notification styles */
+  .toast {
+    position: fixed;
+    top: 80px; /* Below the navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    max-width: 90vw;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    animation: toastSlideIn 0.3s ease-out;
+  }
+
+  .toast-success {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+    color: white;
+    border: 1px solid #16a34a;
+  }
+
+  .toast-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .toast-icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .toast-message {
+    flex: 1;
+  }
+
+  .toast-message strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .toast-message p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.95;
+    line-height: 1.4;
+  }
+
+  .email-highlight {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-weight: 600;
+  }
+
+  @keyframes toastSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+
+  @keyframes toastSlideOut {
+    from {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+  }
+
+  .toast.hiding {
+    animation: toastSlideOut 0.3s ease-in forwards;
+  }
+
+  /* Activity sections styles */
+  .activity-section {
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 0 16px;
+  }
+
+  .activity-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .activity-content.reverse {
+    direction: rtl;
+  }
+
+  .activity-content.reverse > * {
+    direction: ltr;
+  }
+
+  .activity-text h3 {
+    font-size: clamp(14px, 2vw, 28px);
+    margin-bottom: 20px;
+    color: var(--color-dark-green);
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    text-transform: uppercase;
+  }
+
+  .activity-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .activity-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .image-collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+  }
+
+  .image-placeholder {
+    background: var(--section-light);
+    border: 2px dashed var(--color-dark-green);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-dark-green);
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .learn-more-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: var(--color-yellow);
+    color: var(--color-dark-green);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .learn-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .what-we-do-section {
+      padding: 60px 0;
+      background-attachment: scroll; /* Better performance on mobile */
+    }
+
+    .activity-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .activity-content.reverse {
+      direction: ltr;
+    }
+
+    .activity-section {
+      margin: 40px auto;
+    }
+
+    .image-collage {
+      max-width: 300px;
+    }
+  }
+
+  /* Quote Banner Styles */
+  .quote-banner {
+    position: relative;
+    min-height: 700px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--banner-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: left;
+    padding: 40px 16px;
+    margin-bottom: 80px;
+    z-index: 0;
+  }
+
+  .quote-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .quote-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .quote-overlay blockquote {
+    font-size: 24px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--white-strong);
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+
+  .quote-overlay cite {
+    font-size: 18px;
+    font-style: normal;
+    color: var(--white-strong);
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .quote-banner {
+      min-height: 400px;
+      padding: 0;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .quote-banner::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      z-index: 0;
+    }
+
+    .quote-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-width: none;
+      padding: 20px 16px;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+
+    .quote-overlay blockquote {
+      font-size: 18px;
+      padding-left: 15px;
+    }
+
+    .quote-overlay cite {
+      font-size: 14px;
+    }
+  }
+
+  /* Content Row Styles */
+  .content-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+  }
+
+  .content-text {
+    flex: 1;
+  }
+
+  .content-text h2 {
+    font-size: 32px;
+    color: var(--primary-color, var(--color-dark-brown));
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .content-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-color, #333);
+    margin-bottom: 0;
+  }
+
+  .content-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    .content-row {
+      flex-direction: column;
+      gap: 40px;
+      margin: 60px auto;
+      padding: 0 16px;
+    }
+
+    .content-row-reverse {
+      flex-direction: column;
+    }
+
+    /* Events section: image above text on mobile */
+    .events-section {
+      flex-direction: column-reverse;
+    }
+
+    .content-text h2 {
+      font-size: 28px;
+    }
+
+    .content-text p {
+      font-size: 16px;
+    }
+  }
+
+  /* Newsletter Signup Styles */
+  .newsletter-signup {
+    padding: 80px 16px;
+    background: var(--section-light);
+    text-align: left;
+  }
+
+  .newsletter-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .newsletter-content h2 {
+    font-size: 28px;
+    color: var(--color-dark-brown);
+    margin-bottom: 15px;
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    text-transform: uppercase;
+  }
+
+  .newsletter-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 30px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+  }
+
+  .newsletter-input {
+    padding: 12px 16px;
+    border: 2px solid var(--color-light-brown);
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    color: var(--color-text);
+    background: var(--color-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease;
+  }
+
+  .newsletter-input:focus {
+    border-color: var(--color-yellow);
+  }
+
+  .newsletter-button {
+    background: var(--color-yellow);
+    color: var(--color-dark-green);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .newsletter-button:hover {
+    background: var(--color-accent-dark);
+  }
+
+  @media (max-width: 768px) {
+    .newsletter-signup {
+      padding: 60px 16px;
+    }
+
+    .newsletter-content h2 {
+      font-size: 24px;
+    }
+
+    .newsletter-content p {
+      font-size: 16px;
+    }
+
+    .newsletter-form {
+      max-width: 100%;
+    }
+
+    .newsletter-input {
+      padding: 10px 16px;
+    }
+
+    .newsletter-button {
+      padding: 10px 16px;
+      width: 100%;
+    }
+  }
+
+  /* YouTube Videos Section Styles */
+  .youtube-videos-section {
+    padding: 80px 16px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title {
+    font-size: clamp(18px, 2em, 40px);
+    color: var(--color-light-brown);
+    margin: 0 0 20px 0;
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .section-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .videos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .video-heading {
+    font-size: 24px;
+    color: var(--color-light-brown);
+    margin: 0 0 30px 0;
+    font-family:
+      "Lulo Clean Custom",
+      "Avenir Custom",
+      Avenir,
+      Inter,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial,
+      sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .video-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+  }
+
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    .youtube-videos-section {
+      padding: 60px 16px;
+    }
+
+    .section-header {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: clamp(20px, 5vw, 28px);
+    }
+
+    .section-description {
+      font-size: 16px;
+    }
+
+    .videos-container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .video-heading {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .video-wrapper {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .youtube-videos-section {
+      padding: 50px 16px;
+    }
+
+    .videos-container {
+      gap: 40px;
+    }
+
+    .video-heading {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  }
 </style>
