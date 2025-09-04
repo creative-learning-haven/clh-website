@@ -9,32 +9,100 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   <div class="main-container">
     <!-- Main Content Column -->
     <div class="main-content">
-      <!-- Impact Overview -->
-      <div class="impact-overview">
-        <h2 class="section-title">Our Impact</h2>
-        <p class="impact-description">
-          Our 2 libraries support learners in Uganda's Imvepi and Rhino refugee
-          settlements (>200,000 people), where schools are struggling and most
-          people don't have books, internet, or learning materials at home.
-          These are the only community libraries in the area with free book
-          borrowing, literacy classes, and creative activities.
-        </p>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <h3 class="stat-number">800+</h3>
-            <p class="stat-label">People reached at main locations</p>
+      <!-- Mobile Payment Box (hidden on desktop) -->
+      <div class="payment-box-mobile">
+        <h3 class="section-title-green">Support Our Libraries</h3>
+
+        <!-- Donate Section -->
+        <div class="donate-section">
+          <h4 class="donate-title">Donate Now</h4>
+          <p>
+            CLH is 100% crowdfunded! If you are able, please donate using one of
+            the options below. All funds go directly to running our libraries and
+            activities.
+          </p>
+          <div class="donation-options">
+            <div class="donation-option">
+              <h5 class="option-name">Venmo</h5>
+              <p class="option-status">@Lulu-Tian</p>
+            </div>
+            <div class="donation-option">
+              <h5 class="option-name">Zelle</h5>
+              <p class="option-status">+1 (781) 999-0704</p>
+            </div>
+            <div
+              class="gfm-embed"
+              data-url="https://www.gofundme.com/f/uganda-refugee-library-project/widget/medium?sharesheet=undefined&attribution_id=sl:9a7fb96f-62ae-428c-a006-b488bb0cb92d"
+            >
+            </div><script defer src="https://www.gofundme.com/static/js/embed.js"
+            ></script>
           </div>
-          <div class="stat-card">
-            <h3 class="stat-number">150+</h3>
-            <p class="stat-label">Mobile library readers</p>
+          <p class="donate-note">
+            Contributions via Venmo and Zelle are also reflected in the GoFundMe
+            widget above. Please <a href="/contact">contact us</a> if you have any
+            questions or want to donate a different way.
+          </p>
+        </div>
+      </div>
+
+      <!-- Fundraising Goal -->
+      <div class="fundraising-goal">
+        <h3>Fundraising Goal</h3>
+        <p class="goal-amount">$27,000 by April 2026</p>
+        <p class="goal-description">to sustain and expand our libraries</p>
+      </div>
+
+      <!-- Donation Impact -->
+      <div class="donation-impact">
+        <h3 class="section-title">Your Donation Makes a Difference</h3>
+        <div class="bar-graph">
+          <div class="bar-item bar-small">
+            <div class="bar-left">
+              <span class="bar-amount">$6</span>
+            </div>
+            <div class="bar-right">
+              <span class="bar-description">Buys new paint for students who visit 2+ times/week to paint</span>
+            </div>
           </div>
-          <div class="stat-card">
-            <h3 class="stat-number">2,000+</h3>
-            <p class="stat-label">Books in circulation</p>
+          <div class="bar-item bar-small-medium">
+            <div class="bar-left">
+              <span class="bar-amount">$8</span>
+            </div>
+            <div class="bar-right">
+              <span class="bar-description">Puts one more Ugandan curriculum book (the most requested book) on our shelves</span>
+            </div>
           </div>
-          <div class="stat-card">
-            <h3 class="stat-number">8</h3>
-            <p class="stat-label">Library staff trained</p>
+          <div class="bar-item bar-medium">
+            <div class="bar-left">
+              <span class="bar-amount">$25</span>
+            </div>
+            <div class="bar-right">
+              <span class="bar-description">Average operating cost for 1 day of 1 library's activities</span>
+            </div>
+          </div>
+          <div class="bar-item bar-medium-large">
+            <div class="bar-left">
+              <span class="bar-amount">$10/month</span>
+            </div>
+            <div class="bar-right">
+              <span class="bar-description">Provides weekly literacy classes for kids</span>
+            </div>
+          </div>
+          <div class="bar-item bar-large">
+            <div class="bar-left">
+              <span class="bar-amount">$36/month</span>
+            </div>
+            <div class="bar-right">
+              <span class="bar-description">Provides Wifi to one library</span>
+            </div>
+          </div>
+          <div class="bar-item bar-largest">
+            <div class="bar-left">
+              <span class="bar-amount">$80/month</span>
+            </div>
+            <div class="bar-right">
+              <span class="bar-description">Funds mobile libraries for 4 remote locations and 2 primary schools</span>
+            </div>
           </div>
         </div>
       </div>
@@ -100,52 +168,32 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
         </div>
       </div>
 
-      <!-- Fundraising Goal -->
-      <div class="fundraising-goal">
-        <h3>Fundraising Goal</h3>
-        <p class="goal-amount">$27,000 by April 2026</p>
-        <p class="goal-description">to sustain and expand our libraries</p>
-      </div>
-
-      <!-- Donation Impact -->
-      <div class="donation-impact">
-        <h3 class="section-title">Your Donation Makes a Difference</h3>
-        <div class="impact-grid">
-          <div class="impact-card impact-card-yellow">
-            <h4 class="impact-amount">$6</h4>
-            <p class="impact-description">
-              Buys new paint for students who visit 2+ times/week to paint
-            </p>
+      <!-- Impact Overview -->
+      <div class="impact-overview">
+        <h2 class="section-title">Our Impact</h2>
+        <p class="impact-description">
+          Our 2 libraries support learners in Uganda's Imvepi and Rhino refugee
+          settlements (>200,000 people), where schools are struggling and most
+          people don't have books, internet, or learning materials at home.
+          These are the only community libraries in the area with free book
+          borrowing, literacy classes, and creative activities.
+        </p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3 class="stat-number">800+</h3>
+            <p class="stat-label">People reached at main locations</p>
           </div>
-          <div class="impact-card impact-card-blue">
-            <h4 class="impact-amount">$8</h4>
-            <p class="impact-description">
-              Puts one more Ugandan curriculum book (the most requested book) on
-              our shelves
-            </p>
+          <div class="stat-card">
+            <h3 class="stat-number">150+</h3>
+            <p class="stat-label">Mobile library readers</p>
           </div>
-          <div class="impact-card impact-card-green">
-            <h4 class="impact-amount">$10/month</h4>
-            <p class="impact-description">
-              Provides weekly literacy classes for kids
-            </p>
+          <div class="stat-card">
+            <h3 class="stat-number">2,000+</h3>
+            <p class="stat-label">Books in circulation</p>
           </div>
-          <div class="impact-card impact-card-red">
-            <h4 class="impact-amount">$25</h4>
-            <p class="impact-description">
-              Average operating cost for 1 day of 1 library's activities
-            </p>
-          </div>
-          <div class="impact-card impact-card-gray">
-            <h4 class="impact-amount">$36/month</h4>
-            <p class="impact-description">Provides Wifi to one library</p>
-          </div>
-          <div class="impact-card impact-card-light-blue">
-            <h4 class="impact-amount">$80/month</h4>
-            <p class="impact-description">
-              Funds mobile libraries for 4 remote locations and 2 primary
-              schools
-            </p>
+          <div class="stat-card">
+            <h3 class="stat-number">8</h3>
+            <p class="stat-label">Library staff trained</p>
           </div>
         </div>
       </div>
@@ -402,71 +450,125 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     margin-bottom: 2rem;
   }
 
-  .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+  .bar-graph {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
 
-  .impact-card {
-    padding: 1.5rem;
+  .bar-item {
+    display: flex;
+    min-height: 60px;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .impact-card-yellow {
-    background: var(--color-light-yellow);
+  .bar-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
   }
 
-  .impact-card-blue {
-    background: var(--color-orange);
+  .bar-right {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    flex: 1;
   }
 
-  .impact-card-green {
-    background: var(--color-orange-2);
-  }
-
-  .impact-card-red {
-    background: var(--color-dark-yellow);
-  }
-
-  .impact-card-gray {
-    background: var(--color-light-brown);
-  }
-
-  .impact-card-light-blue {
-    background: var(--color-yellow);
-  }
-
-  .impact-amount {
-    margin: 0 0 0.5rem 0;
-  }
-
-  .impact-card-yellow .impact-amount {
-    color: var(--color-dark-brown);
-  }
-
-  .impact-card-blue .impact-amount {
-    color: var(--color-dark-brown);
-  }
-
-  .impact-card-green .impact-amount {
-    color: var(--color-dark-brown);
-  }
-
-  .impact-card-red .impact-amount {
-    color: var(--color-dark-brown);
-  }
-
-  .impact-card-gray .impact-amount {
+  .bar-amount {
     color: white;
   }
 
-  .impact-card-light-blue .impact-amount {
+  .bar-description {
     color: var(--color-dark-brown);
+    font-size: 0.95rem;
+    line-height: 1.4;
   }
 
-  .impact-description {
-    margin: 0;
+  /* All bars same length, different left section widths */
+  .bar-item {
+    width: 100%;
+  }
+
+  .bar-small .bar-left {
+    width: 12%;
+  }
+
+  .bar-small-medium .bar-left {
+    width: 16%;
+  }
+
+  .bar-medium .bar-left {
+    width: 24%;
+  }
+
+  .bar-medium-large .bar-left {
+    width: 32%;
+  }
+
+  .bar-large .bar-left {
+    width: 44%;
+  }
+
+  .bar-largest .bar-left {
+    width: 56%;
+  }
+
+  /* Bar colors */
+  .bar-small .bar-left {
+    background: var(--color-dark-green);
+  }
+
+  .bar-small .bar-amount {
+    color: white;
+  }
+
+  .bar-small-medium .bar-left {
+    background: var(--meta-pakistan-green);
+  }
+
+  .bar-small-medium .bar-amount {
+    color: white;
+  }
+
+  .bar-medium .bar-left {
+    background: var(--meta-forest-green);
+  }
+
+  .bar-medium .bar-amount {
+    color: white;
+  }
+
+  .bar-medium-large .bar-left {
+    background: var(--meta-apple-green);
+  }
+
+  .bar-medium-large .bar-amount {
+    color: white;
+  }
+
+  .bar-large .bar-left {
+    background: var(--color-dark-yellow);
+  }
+
+  .bar-large .bar-amount {
+    color: white;
+  }
+
+  .bar-largest .bar-left {
+    background: var(--color-orange-2);
+  }
+
+  .bar-largest .bar-amount {
+    color: white;
   }
 
   .impact-overview p {
@@ -491,13 +593,14 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .support-title {
-    color: var(--color-dark-brown);
+    color: var(--color-light-brown);
     margin: 0 0 0.5rem 0;
   }
 
   .support-subtitle {
     margin: 0;
     font-size: 0.9rem;
+    color: var(--color-dark-green);
   }
 
   .quote-card {
@@ -511,7 +614,8 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
   }
 
   .quote-card-blue {
-    background: var(--color-orange-2);
+    color: var(--color-light-brown);
+    /* background: var(--color-orange-2); */
   }
 
   .quote {
@@ -554,6 +658,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
 
   .partners-description {
     margin-bottom: 1rem;
+    color: var(--color-dark-brown);
   }
 
   .partners-note {
@@ -571,6 +676,10 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
+  }
+
+  .payment-box-mobile {
+    display: none;
   }
 
   .donate-section {
@@ -631,7 +740,31 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     }
 
     .payment-box {
-      position: static;
+      display: none;
+    }
+
+    .payment-box-mobile {
+      display: block;
+      background: white;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    /* Remove corner rounding on mobile */
+    .fundraising-goal,
+    .donation-impact,
+    .impact-overview,
+    .donations-support,
+    .quote-card,
+    .partners-section,
+    .bar-item,
+    .section-image {
+      border-radius: 0 !important;
+    }
+
+    .text-content {
+      padding: 1rem 1.5rem;
     }
   }
 </style>
