@@ -1,42 +1,42 @@
 {
   "upcoming": [
     {
-      "dateLine": "June 2025 - Oct 2025",
-      "title": "Winchester, MA Farmer's Market",
-      "description": "We will be at the community booth once a month with merchandise, activities, and information, dates TBD.",
-      "location": "Winchester Center, Winchester, MA",
-      "locationLink": "https://maps.google.com/?q=Winchester+Center+Winchester+MA"
-    },
-    {
-      "dateLine": "Oct 3, 2025 6PM",
-      "title": "Art Pen Pals Showcase 1",
-      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the MIT Welcome Center!",
-      "location": "MIT Welcome Center, Cambridge, MA",
-      "locationLink": "https://maps.google.com/?q=MIT+Welcome+Center+Cambridge+MA"
-    },
-    {
-      "dateLine": "Oct 11, 2025 9:30AM - 1:30pm",
-      "title": "Art Pen Pals Showcase 2",
-      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the Winchester Farmer's Market!",
-      "location": "Winchester Town Center, Winchester, MA",
-      "locationLink": "https://maps.google.com/?q=Winchester+Town+Center+Winchester+MA"
-    },
-    {
       "dateLine": "Nov 9, 2025 3PM",
-      "title": "Art Pen Pals Showcase 3",
-      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the Griffin Museum of Photography!",
+      "title": "Art + Libraries in Uganda's Refugee Camps",
+      "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at the Griffin Museum of Photography! <a href='http://bit.ly/4oZBgHh' target='_blank' rel='noopener noreferrer'><strong>RSVP here</strong></a>.",
       "location": "Griffin Museum, Winchester, MA",
       "locationLink": "https://maps.google.com/?q=Griffin+Museum+Winchester+MA"
     },
     {
       "dateLine": "Nov 22, 2025",
-      "title": "Art Pen Pals Showcase 4",
+      "title": "Art + Libraries in Uganda's Refugee Camps",
       "description": "Students from Winchester, MA and Imvepi Refugee Camp are paired through email and exchange conversation about culture and daily life, as well as art they create in response to shared prompts. Come see our work at Winchester Open Studios!",
       "location": "Winchester Open Studios",
       "locationLink": "https://winchesterculturaldistrict.org/winchester-open-studios.html"
     }
   ],
   "past": [
+    {
+      "dateLine": "Oct 11, 2025 9:30AM - 1:30pm",
+      "title": "Winchester Farmer's Market showcase",
+      "description": "CLH presented refugee youth art and art from Winchester students who exchanged artwork and conversations. We also held free drawing and bracelet-making activities, and sold postcards!",
+      "location": "Winchester Town Center, Winchester, MA",
+      "locationLink": "https://maps.google.com/?q=Winchester+Town+Center+Winchester+MA"
+    },
+    {
+      "dateLine": "Oct 3, 2025 6PM",
+      "title": "Design for Our Lives screening",
+      "description": "CLH presented about our work at a booth during the reception for the documentary film Design for Our Lives. Event information can be found <a href='https://d-lab.mit.edu/news-blog/news/screening-design-our-lives-tanzania-x-uganda-x-mit-d-lab-october-3' target='_blank' rel='noopener noreferrer'>here</a>.",
+      "location": "MIT Welcome Center, Cambridge, MA",
+      "locationLink": "https://maps.google.com/?q=MIT+Welcome+Center+Cambridge+MA"
+    },
+    {
+      "dateLine": "June 2025 - Oct 2025",
+      "title": "Winchester, MA Farmer's Market",
+      "description": "We will be at the community booth once a month with merchandise, activities, and information, dates TBD.",
+      "location": "Winchester Center, Winchester, MA",
+      "locationLink": "https://maps.google.com/?q=Winchester+Center+Winchester+MA"
+    },
     {
       "dateLine": "June 20, 2025",
       "title": "World Refugee Day",
@@ -52,4 +52,3 @@
     }
   ]
 }
-

@@ -35,7 +35,7 @@ const eventsData = events as EventsData;
                      `${e.location}`
                    )}
                  </p>
-                 <p class="event-desc">{e.description}</p>
+                 <p class="event-desc" set:html={e.description}></p>
                </div>
              </li>
            ))
@@ -71,7 +71,7 @@ const eventsData = events as EventsData;
                        `${e.location}`
                      )}
                    </p>
-                   <p class="event-desc">{e.description}</p>
+                   <p class="event-desc" set:html={e.description}></p>
                  </div>
                </li>
              ))

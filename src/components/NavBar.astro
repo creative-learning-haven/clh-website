@@ -50,7 +50,7 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 <style>
 	.site-header {
 		position: fixed;
-		top: 0;
+		top: 37px;
 		z-index: 1000;
 		background: var(--color-orange);
 		color: white;
@@ -250,7 +250,8 @@ const { currentPath = "/" } = Astro.props as { currentPath?: string };
 	}
 
 	@media (max-width: 720px) {
-		.site-header { 
+		.site-header {
+			top: 0; /* no notification bar above on mobile */
 			grid-template-columns: 1fr auto; 
 		}
 		

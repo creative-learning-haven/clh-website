@@ -3,6 +3,7 @@ import SecondaryPage from "../layouts/SecondaryPage.astro";
 import buildingShelfImg from "../assets/building_shelf.avif";
 import kidsReadingImg from "../assets/kids_reading.avif";
 import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
+import postcardGoogleFormImg from "../assets/postcard_googleform.avif";
 ---
 
 <SecondaryPage title="Support Us" heroImage={buildingShelfImg.src}>
@@ -50,6 +51,26 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
         <h3>Fundraising Goal</h3>
         <p class="goal-amount">$27,000 by April 2026</p>
         <p class="goal-description">to sustain and expand our libraries</p>
+      </div>
+
+      <!-- Postcards Section -->
+      <div class="postcards-section">
+        <h3 class="section-title-green">New: Postcards to support Creative Learning Haven!</h3>
+        <div class="postcards-image">
+          <img
+            src={postcardGoogleFormImg.src}
+            alt="Postcard order form"
+            class="section-image"
+          />
+        </div>
+        <div class="postcards-text">
+          <p class="card-text">
+            <strong>Place your order (suggested $5/ postcard) and we will mail postcards along with a special message from a CLH artist :)</strong>
+            <a href="https://forms.gle/jGzUC9CV1rBaSKbj9" target="_blank" rel="noopener noreferrer" class="postcard-link">
+              <strong>Order postcards here!</strong>
+            </a>
+          </p>
+        </div>
       </div>
 
       <!-- Donation Impact -->
@@ -180,7 +201,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
         </p>
         <div class="stats-grid">
           <div class="stat-card">
-            <h3 class="stat-number">800+</h3>
+            <h3 class="stat-number">1,000+</h3>
             <p class="stat-label">People reached at main locations</p>
           </div>
           <div class="stat-card">
@@ -433,6 +454,52 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
     padding: 2rem;
     margin-bottom: 2rem;
     border-radius: 12px;
+  }
+
+  .postcards-section {
+    background: var(--color-light-yellow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .postcards-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+  }
+
+  .postcards-text {
+    text-align: center;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .postcards-text p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--color-dark-brown);
+  }
+
+  .postcard-link {
+    display: inline-block;
+    background: var(--color-dark-green);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .postcard-link:hover {
+    background: var(--color-light-brown);
+    color: white;
   }
 
   .goal-amount {
@@ -735,6 +802,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
       gap: 2rem;
     }
 
+
     .image-content {
       order: -1;
     }
@@ -753,6 +821,7 @@ import luluTeachingDrawingImg from "../assets/lulu_teaching_drawing.avif";
 
     /* Remove corner rounding on mobile */
     .fundraising-goal,
+    .postcards-section,
     .donation-impact,
     .impact-overview,
     .donations-support,

@@ -23,6 +23,7 @@ export const siteData = {
       { title: "About", href: "/about" },
       { title: "Support Us", href: "/support-us" },
       { title: "Events", href: "/events" },
+      { title: "Art", href: "/art" },
       { title: "Blog", href: "/blog" },
       { title: "Contact", href: "/contact" },
     ],
