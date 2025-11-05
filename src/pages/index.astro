@@ -1,13 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImg from "../assets/reading.avif"; //'../assets/P1090543.jpg';
 import libraryGroupImg from "../assets/library_group.avif";
 import headphonesFunImg from "../assets/headphones_fun.avif";
 import landscapeImg from "../assets/landscape_2.avif";
 import farmersMarketImg from "../assets/farmers_market.avif";
 
+// Hero carousel images
+import heroImg1 from "../assets/kids_at_library.avif";
+import heroImg2 from "../assets/kids_at_table.avif";
+import heroImg3 from "../assets/kids_mobile_library.avif";
+import heroImg4 from "../assets/kids_mobile_library_2.avif";
+import heroImg5 from "../assets/man_in_front_of_wall.avif";
+import heroImg6 from "../assets/woman_teaching_kids.avif";
+
 import ActivitiesCarousel from "../components/ActivitiesCarousel.astro";
 import { activities } from "../data/site.js";
+
+const heroImages = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5, heroImg6];
 ---
 
 <Layout>
@@ -25,7 +34,16 @@ import { activities } from "../data/site.js";
     </div>
   </div>
 
-  <section class="hero" style={`--hero-image: url(${heroImg.src})`}>
+  <section class="hero">
+    <div class="hero-images">
+      {heroImages.map((img, index) => (
+        <div
+          class={`hero-image ${index === 0 ? "active" : ""}`}
+          style={`--hero-image: url(${img.src})`}
+          data-index={index}
+        ></div>
+      ))}
+    </div>
     <div class="hero-inner">
       <h1>
         <span>Knowledge is Peace</span>
@@ -209,6 +227,30 @@ import { activities } from "../data/site.js";
           }, 300); // Wait for animation to complete
         }, 5000); // Hide after 5 seconds
       }
+
+      // Hero image carousel
+      const heroImages = document.querySelectorAll(".hero-image");
+      let currentIndex = 0;
+      const totalImages = heroImages.length;
+
+      // Check for reduced motion preference
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function rotateHeroImage() {
+        // Remove active class from current image
+        heroImages[currentIndex].classList.remove("active");
+        
+        // Move to next image
+        currentIndex = (currentIndex + 1) % totalImages;
+        
+        // Add active class to new image
+        heroImages[currentIndex].classList.add("active");
+      }
+
+      // Start rotation every 10 seconds (only if motion is not reduced)
+      if (heroImages.length > 1 && !prefersReducedMotion) {
+        setInterval(rotateHeroImage, 10000);
+      }
     });
   </script>
 </Layout>
@@ -224,8 +266,16 @@ import { activities } from "../data/site.js";
     overflow: hidden;
   }
 
-  .hero::before {
-    content: "";
+  .hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+
+  .hero-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -235,7 +285,18 @@ import { activities } from "../data/site.js";
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
-    z-index: -2;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .hero-image.active {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image {
+      transition: none;
+    }
   }
 
   .hero::after {

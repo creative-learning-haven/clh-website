@@ -2,6 +2,7 @@
 import SecondaryPage from "../layouts/SecondaryPage.astro";
 import events from "../data/events.json";
 import posingInFrontOfLibraryImg from "../assets/posing_in_front_of_library.avif";
+import griffinMuseumFlyerImg from "../assets/griffin_museum_nov_9_flyer.avif";
 type EventItem = { 
   dateLine: string; 
   title: string; 
@@ -17,6 +18,7 @@ const eventsData = events as EventsData;
    <div class="events-container">
      <section class="events-section">
        <h2 class="section-title">Upcoming Events</h2>
+       <img src={griffinMuseumFlyerImg.src} alt="Griffin Museum November 9 Flyer" class="event-flyer" />
        <ul class="event-list">
          {
            eventsData.upcoming.map((e) => (
@@ -116,6 +118,14 @@ const eventsData = events as EventsData;
     text-transform: uppercase;
     border-bottom: 2px solid var(--color-hover);
     padding-bottom: 8px;
+  }
+
+  .event-flyer {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 0 32px;
+    border-radius: 8px;
   }
 
   /* Past Events Section Styling */
