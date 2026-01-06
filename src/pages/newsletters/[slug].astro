@@ -1,0 +1,188 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const newsletters = await getCollection("newsletters");
+  return newsletters.map((newsletter) => ({
+    params: { slug: newsletter.slug },
+    props: { newsletter },
+  }));
+}
+
+const { newsletter } = Astro.props;
+const { Content } = await newsletter.render();
+
+const formattedDate = newsletter.data.date.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout>
+  <article class="newsletter">
+    <header class="newsletter-header">
+      <a href="/blog" class="back-link">← Back to Blog</a>
+      <h1>{newsletter.data.title}</h1>
+      <div class="newsletter-meta">
+        <time datetime={newsletter.data.date.toISOString()}>{formattedDate}</time>
+        {newsletter.data.author && <span class="author">by {newsletter.data.author}</span>}
+      </div>
+    </header>
+    
+    <div class="newsletter-content">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .newsletter {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  .newsletter-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--meta-forest-green, #41871B);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    transition: color 0.2s ease;
+  }
+
+  .back-link:hover {
+    color: var(--meta-pakistan-green, #0B360F);
+  }
+
+  .newsletter-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: var(--color-ink, #162126);
+    letter-spacing: -0.02em;
+  }
+
+  .newsletter-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #666;
+    font-size: 0.95rem;
+  }
+
+  .newsletter-meta time {
+    color: #888;
+  }
+
+  .newsletter-meta .author {
+    color: var(--meta-forest-green, #41871B);
+    font-weight: 500;
+  }
+
+  .newsletter-content {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #333;
+  }
+
+  .newsletter-content :global(h1) {
+    display: none; /* Hide the first h1 since we show title in header */
+  }
+
+  .newsletter-content :global(h2) {
+    font-size: 1.6rem;
+    margin: 48px 0 20px;
+    color: var(--color-ink, #162126);
+    letter-spacing: -0.02em;
+  }
+
+  .newsletter-content :global(h3) {
+    font-size: 1.3rem;
+    margin: 36px 0 16px;
+    color: var(--color-ink, #162126);
+    letter-spacing: -0.01em;
+  }
+
+  .newsletter-content :global(p) {
+    margin: 0 0 24px;
+  }
+
+  .newsletter-content :global(ul),
+  .newsletter-content :global(ol) {
+    margin: 0 0 24px;
+    padding-left: 24px;
+  }
+
+  .newsletter-content :global(li) {
+    margin-bottom: 8px;
+  }
+
+  .newsletter-content :global(strong) {
+    color: var(--color-ink, #162126);
+    font-weight: 700;
+  }
+
+  .newsletter-content :global(em) {
+    font-style: italic;
+    color: #555;
+  }
+
+  .newsletter-content :global(a) {
+    color: var(--meta-forest-green, #41871B);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .newsletter-content :global(a:hover) {
+    color: var(--meta-pakistan-green, #0B360F);
+  }
+
+  .newsletter-content :global(blockquote) {
+    margin: 32px 0;
+    padding: 20px 24px;
+    background: #f8f9fa;
+    border-left: 4px solid var(--meta-apple-green, #AAB82E);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #555;
+  }
+
+  .newsletter-content :global(hr) {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 48px 0;
+  }
+
+  @media (max-width: 768px) {
+    .newsletter {
+      padding: 40px 20px 60px;
+    }
+
+    .newsletter-header h1 {
+      font-size: 1.8rem;
+    }
+
+    .newsletter-content {
+      font-size: 1rem;
+    }
+
+    .newsletter-content :global(h2) {
+      font-size: 1.4rem;
+    }
+
+    .newsletter-content :global(h3) {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
