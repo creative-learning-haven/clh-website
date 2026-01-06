@@ -2,7 +2,6 @@
 import SecondaryPage from "../layouts/SecondaryPage.astro";
 import events from "../data/events.json";
 import posingInFrontOfLibraryImg from "../assets/posing_in_front_of_library.avif";
-import griffinMuseumFlyerImg from "../assets/griffin_museum_nov_9_flyer.avif";
 type EventItem = { 
   dateLine: string; 
   title: string; 
@@ -18,31 +17,39 @@ const eventsData = events as EventsData;
    <div class="events-container">
      <section class="events-section">
        <h2 class="section-title">Upcoming Events</h2>
-       <img src={griffinMuseumFlyerImg.src} alt="Griffin Museum November 9 Flyer" class="event-flyer" />
-       <ul class="event-list">
-         {
-           eventsData.upcoming.map((e) => (
-             <li class="event">
-               <div class="date">
-                 <div>{e.dateLine}</div>
-               </div>
-               <div class="details">
-                 <h3 class="event-title">{e.title}</h3>
-                 <p class="event-location">
-                   {e.locationLink ? (
-                     <a href={e.locationLink} target="_blank" rel="noopener noreferrer" class="location-link">
-                       {e.location}
-                     </a>
-                   ) : (
-                     `${e.location}`
-                   )}
-                 </p>
-                 <p class="event-desc" set:html={e.description}></p>
-               </div>
-             </li>
-           ))
-         }
-       </ul>
+       {eventsData.upcoming.length > 0 ? (
+        <>
+          <ul class="event-list">
+            {
+              eventsData.upcoming.map((e) => (
+                <li class="event">
+                  <div class="date">
+                    <div>{e.dateLine}</div>
+                  </div>
+                  <div class="details">
+                    <h3 class="event-title">{e.title}</h3>
+                    <p class="event-location">
+                      {e.locationLink ? (
+                        <a href={e.locationLink} target="_blank" rel="noopener noreferrer" class="location-link">
+                          {e.location}
+                        </a>
+                      ) : (
+                        `${e.location}`
+                      )}
+                    </p>
+                    <p class="event-desc" set:html={e.description}></p>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </>
+      ) : (
+        <div class="no-events-placeholder">
+          <p>Stay tuned for new events!</p>
+          <p class="placeholder-subtext">Follow us on social media to get notified about upcoming events.</p>
+        </div>
+      )}
      </section>
 
      <section class="events-section past-events-section">
@@ -126,6 +133,31 @@ const eventsData = events as EventsData;
     height: auto;
     margin: 0 0 32px;
     border-radius: 8px;
+  }
+
+  .no-events-placeholder {
+    text-align: center;
+    padding: 48px 24px;
+    background: linear-gradient(135deg, rgba(var(--color-orange-rgb, 210, 105, 30), 0.05), rgba(var(--color-light-brown-rgb, 139, 90, 43), 0.08));
+    border-radius: 12px;
+    border: 1px dashed var(--color-hover);
+  }
+
+  .no-events-placeholder p {
+    margin: 0;
+    font-family: "Lulo Clean Custom", "Avenir Custom", Avenir, sans-serif;
+    font-size: 1.4em;
+    color: var(--color-light-brown);
+    text-transform: uppercase;
+  }
+
+  .no-events-placeholder .placeholder-subtext {
+    margin-top: 12px;
+    font-family: "Avenir Custom", Avenir, sans-serif;
+    font-size: 0.9em;
+    text-transform: none;
+    color: var(--color-dark-brown);
+    opacity: 0.8;
   }
 
   /* Past Events Section Styling */
