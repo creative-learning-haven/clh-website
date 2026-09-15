@@ -92,6 +92,18 @@ const heroImages = [heroImg0, heroImg1, heroImg2, heroImg3, heroImg4];
 		Hear from the teams in our two libraries. Imvepi CLH is run by <a href="https://www.facebook.com/groups/624838306517772/" target="_blank" rel="noopener noreferrer">Hope Rising South Sudan</a> and Rhino CLH (Ocea) is run by <a href="https://youthsat.org/" target="_blank" rel="noopener noreferrer">Youth Social Advocacy Team Uganda</a>.      </p>
     </div>
     <div class="videos-container">
+      <div class="video-item video-item--featured">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/2P1VT4aBHZY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
       <div class="video-item">
         <div class="video-wrapper">
           <iframe
@@ -1190,6 +1202,13 @@ const heroImages = [heroImg0, heroImg1, heroImg2, heroImg3, heroImg4];
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .video-item--featured {
+    grid-column: 1 / -1;
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .video-heading {
