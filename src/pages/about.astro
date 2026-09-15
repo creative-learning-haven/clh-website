@@ -17,9 +17,13 @@ import zukaImg from "../assets/team_photos/zuka.avif";
 import johnsonImg from "../assets/team_photos/johnson.avif";
 import peterImg from "../assets/team_photos/peter.avif";
 import gawaarImg from "../assets/team_photos/gawaar.avif";
-import robertImg from "../assets/team_photos/robert.avif";
+import baronImg from "../assets/Baron.avif";
 import nyatotImg from "../assets/team_photos/nyatot.avif";
 import judithImg from "../assets/team_photos/judith.avif";
+import remoEmmanuelImg from "../assets/Remo Emmanuel.avif";
+import annImg from "../assets/Ann.avif";
+import markAnthonyImg from "../assets/Mark Anthony.avif";
+import richardMandelaImg from "../assets/Richard Mandela.avif";
 ---
 
 <SecondaryPage title="About Us" heroImage={walkingImg.src}>
@@ -261,10 +265,10 @@ import judithImg from "../assets/team_photos/judith.avif";
       </div>
       <div class="team-member">
         <div class="team-member-photo">
-          <img src={robertImg.src} alt="Team member photo" />
+          <img src={baronImg.src} alt="Baron Chuol Lok Tai" />
         </div>
-        <h3 class="team-member-name">Robert Anguyo</h3>
-        <p class="team-member-title">Information Technology & Data</p>
+        <h3 class="team-member-name">Baron Chuol Lok Tai</h3>
+        <p class="team-member-title">Librarian</p>
       </div>
       <div class="team-member">
         <div class="team-member-photo">
@@ -279,6 +283,41 @@ import judithImg from "../assets/team_photos/judith.avif";
         </div>
         <h3 class="team-member-name">Judith Gire Charles</h3>
         <p class="team-member-title">Community Engagement Librarian</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Youth for Peace Initiative Team Section -->
+  <div class="team-section">
+    <h2>Youth for Peace Initiative (YFPI)</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src={remoEmmanuelImg.src} alt="Remo Emmanuel" />
+        </div>
+        <h3 class="team-member-name">Remo Emmanuel</h3>
+        <p class="team-member-title">Team Lead, Executive Director of YFPI</p>
+      </div>
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src={annImg.src} alt="Ann" />
+        </div>
+        <h3 class="team-member-name">Ann</h3>
+        <p class="team-member-title">Community Extension Worker</p>
+      </div>
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src={markAnthonyImg.src} alt="Mark Anthony" />
+        </div>
+        <h3 class="team-member-name">Mark Anthony</h3>
+        <p class="team-member-title">Librarian</p>
+      </div>
+      <div class="team-member">
+        <div class="team-member-photo">
+          <img src={richardMandelaImg.src} alt="Richard Mandela" />
+        </div>
+        <h3 class="team-member-name">Richard Mandela</h3>
+        <p class="team-member-title">Community Extension Worker</p>
       </div>
     </div>
   </div>
@@ -518,15 +557,14 @@ import judithImg from "../assets/team_photos/judith.avif";
   }
 
   .approach-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
     overflow: hidden;
     min-height: 700px;
-    max-height: 850px;
   }
 
   .approach-image img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -822,6 +860,7 @@ import judithImg from "../assets/team_photos/judith.avif";
     overflow: hidden;
     border: 4px solid var(--color-orange);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.35);
   }
 
   .team-member-photo img {
