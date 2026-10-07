@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import horissImg from "../assets/Horiss logo.jpg";
 import ysatImg from "../assets/ysat_logo.png";
 import winchesterImg from "../assets/winchester_logo.png";
+import yfpiImg from "../assets/yfpi_logo.png";
 import imvepiMapImg from "../assets/imvepi_map.avif";
 import rhinoMapImg from "../assets/rhino_map.avif";
 import imvepiSetupImg from "../assets/imvepi_setup.avif";
@@ -198,11 +199,19 @@ import richardMandelaImg from "../assets/Richard Mandela.avif";
         <p>Library branch run by Hope Rising South Sudan (HoRiSS)</p>
       </div>
       <div class="partner-card">
-        <div class="partner-logo">
-          <img src={ysatImg.src} alt="Youth Social Advocacy Team" />
+        <div class="partner-logos">
+          <div class="partner-logo">
+            <img src={ysatImg.src} alt="Youth Social Advocacy Team" />
+          </div>
+          <div class="partner-logo">
+            <img src={yfpiImg.src} alt="Youth for Peace Initiative" />
+          </div>
         </div>
         <h3>Rhino CLH</h3>
-        <p>Library branch run by Youth Social Advocacy Team (YSAT)</p>
+        <p>
+          Library branch run by Youth Social Advocacy Team (YSAT) and Youth for
+          Peace Initiative (YFPI)
+        </p>
       </div>
       <div class="partner-card">
         <div class="partner-logo">
@@ -289,6 +298,9 @@ import richardMandelaImg from "../assets/Richard Mandela.avif";
 
   <!-- Youth for Peace Initiative Team Section -->
   <div class="team-section">
+    <div class="team-section-logo">
+      <img src={yfpiImg.src} alt="Youth for Peace Initiative" />
+    </div>
     <h2>Youth for Peace Initiative (YFPI)</h2>
     <div class="team-grid">
       <div class="team-member">
@@ -461,6 +473,14 @@ import richardMandelaImg from "../assets/Richard Mandela.avif";
     text-align: center;
   }
 
+  .partner-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
   .partner-logo {
     width: 80px;
     height: 80px;
@@ -468,6 +488,10 @@ import richardMandelaImg from "../assets/Richard Mandela.avif";
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .partner-logos .partner-logo {
+    margin: 0;
   }
 
   .partner-logo img {
@@ -839,6 +863,18 @@ import richardMandelaImg from "../assets/Richard Mandela.avif";
     margin-left: auto;
     margin-right: auto;
     padding: 0 16px;
+  }
+
+  .team-section-logo {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 16px;
+  }
+
+  .team-section-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .team-grid {
